@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>History Of Communication Regulation | BOCRA</title>
+  <meta name="description" content="Explore the history of communication regulation in Botswana from 1996 to present, tracing the evolution of BOCRA and its predecessors." />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hist-hero {
+      background: var(--gradient-dark);
+      padding: 80px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hist-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,169,165,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hist-hero-content { position: relative; z-index: 2; }
+    .hist-hero h1 { color: #fff; font-size: 3.5rem; font-weight: 800; margin-bottom: 16px; }
+    .hist-hero p  { color: rgba(255,255,255,0.82); font-size: 1.15rem; max-width: 580px; }
+    .hero-breadcrumb {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 20px;
+    }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.75); }
+    .hero-breadcrumb a:hover { color: var(--accent-teal); }
+    .hero-breadcrumb span { color: var(--accent-teal); font-weight: 600; }
+
+    /* Timeline */
+    .timeline-section { padding: 80px 0; }
+    .timeline-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 70px;
+    }
+    .timeline-intro h2 { font-size: 2.4rem; color: var(--primary-navy); margin-bottom: 16px; }
+    .timeline-intro p  { font-size: 1.1rem; color: var(--text-gray); line-height: 1.8; }
+
+    .timeline {
+      position: relative;
+      padding: 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--primary-navy), var(--secondary-azure), var(--accent-teal));
+      transform: translateX(-50%);
+      border-radius: 3px;
+    }
+    .timeline-item {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: calc(50% + 40px);
+      padding-bottom: 55px;
+      position: relative;
+    }
+    .timeline-item:nth-child(even) {
+      justify-content: flex-start;
+      padding-right: 0;
+      padding-left: calc(50% + 40px);
+    }
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      width: 52px; height: 52px;
+      transform: translateX(-50%);
+      background: var(--gradient-dark);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.82rem;
+      font-family: var(--font-heading);
+      border: 4px solid #fff;
+      box-shadow: 0 0 0 3px var(--secondary-azure);
+      z-index: 2;
+      transition: var(--transition-normal);
+    }
+    .timeline-item:hover .timeline-dot {
+      background: var(--gradient-teal);
+      box-shadow: 0 0 0 3px var(--accent-teal), 0 0 20px rgba(0,169,165,0.4);
+    }
+    .timeline-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      padding: 28px 32px;
+      box-shadow: var(--shadow-md);
+      max-width: 380px;
+      width: 100%;
+      position: relative;
+      transition: var(--transition-normal);
+      border-top: 4px solid var(--secondary-azure);
+    }
+    .timeline-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-top-color: var(--accent-teal); }
+    .timeline-card::before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      right: -12px;
+      width: 12px; height: 12px;
+      background: #fff;
+      clip-path: polygon(0 0, 0 100%, 100% 50%);
+    }
+    .timeline-item:nth-child(even) .timeline-card::before {
+      right: auto;
+      left: -12px;
+      clip-path: polygon(100% 0, 100% 100%, 0 50%);
+    }
+    .tl-year {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      font-family: var(--font-heading);
+      background: linear-gradient(135deg, var(--primary-navy), var(--secondary-azure));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+    .timeline-card p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* Stats Banner */
+    .history-stats {
+      background: var(--gradient-dark);
+      padding: 60px 0;
+      margin-top: 20px;
+    }
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .hist-stat { text-align: center; }
+    .hist-stat .num { font-size: 3rem; font-weight: 800; color: #fff; font-family: var(--font-heading); }
+    .hist-stat .lbl { color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-top: 5px; }
+
+    @media (max-width: 768px) {
+      .hist-hero h1 { font-size: 2.2rem; }
+      .timeline::before { left: 28px; }
+      .timeline-item,
+      .timeline-item:nth-child(even) {
+        justify-content: flex-start;
+        padding-left: 80px;
+        padding-right: 0;
+      }
+      .timeline-dot { left: 28px; }
+      .timeline-card { max-width: 100%; }
+      .timeline-card::before,
+      .timeline-item:nth-child(even) .timeline-card::before {
+        right: auto; left: -12px;
+        clip-path: polygon(100% 0, 100% 100%, 0 50%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Utility Bar -->
+  <div class="top-banner" id="top-banner">
+    <div class="container top-banner-content">
+      <div class="top-utility-stack">
+        <a href="https://registration.bocra.org.bw/" target="_blank" class="top-bar-link"><i class="fa-solid fa-laptop"></i> BOCRA Portal</a>
+        <a href="licensing.html" class="top-bar-link"><i class="fa-solid fa-file-signature"></i> Licensing</a>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search BOCRA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" />
+      </a>
+      <div class="nav-wrapper-outer">
+        <div class="nav-wrapper" id="nav-wrapper">
+          <nav class="main-nav" id="main-nav">
+            <ul class="nav-list">
+              <li class="has-dropdown">
+                <a href="#">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="profile.html">Profile</a></li>
+                  <li><a href="ce-message.html">A Word From The Chief Executive</a></li>
+                  <li><a href="history.html">History Of Communication Regulation</a></li>
+                  <li><a href="organogram.html">Organogram</a></li>
+                  <li><a href="about.html#board">Board of Directors</a></li>
+                  <li><a href="executives.html">Executive Management</a></li>
+                  <li><a href="careers.html">Careers</a></li>
+                </ul>
+              </li>
+              <li class="has-dropdown">
+                <a href="#">Mandate <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="legislation.html">Legislation</a></li>
+                  <li><a href="telecommunications.html">Telecommunications</a></li>
+                  <li><a href="broadcasting.html">Broadcasting</a></li>
+                  <li><a href="postal.html">Postal</a></li>
+                  <li><a href="internet.html">Internet</a></li>
+                </ul>
+              </li>
+              <li><a href="projects.html">Projects</a></li>
+              <li class="has-dropdown">
+                <a href="#">Documents <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="draft-docs.html">Draft Documents And Legislation</a></li>
+                  <li><a href="https://www.bocra.org.bw/sites/default/files/2024-03/ICT%20Licensing%20Framework.pdf">ICT Licencing Framework</a></li>
+                  <li><a href="itu-workshop.html">ITU Capacity Building Workshop</a></li>
+                </ul>
+              </li>
+              <li><a href="complaints.html">Complaints</a></li>
+              <li><a href="media.html">Media</a></li>
+              <li><a href="tenders.html">Tenders</a></li>
+              <li><a href="https://registration.bocra.org.bw/" class="nav-highlight" target="_blank">ASMS-WebCP</a></li>
+            </ul>
+          </nav>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="inner-hero">
+    <div class="container">
+      <div class="hero-breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>About</span>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>History</span>
+      </div>
+      <h1 class="fade-in-up">History</h1>
+      <p class="fade-in-up delay-1">Explore the evolution of communication regulation in Botswana from 1996 to the present day.</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="timeline-section">
+      <div class="container">
+        <div class="timeline-intro fade-in-up">
+          <div class="section-badge">Our Journey</div>
+          <h2>A Legacy of Innovation &amp; Regulation</h2>
+          <p>From the establishment of the Botswana Telecommunications Authority in 1996 to the creation of the fully converged BOCRA in 2013, Botswana has been at the forefront of progressive communications regulation in Africa.</p>
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot">1996</div>
+            <div class="timeline-card">
+              <div class="tl-year">1996</div>
+              <p>Approval of the <strong>Telecommunications Act of 1996 [No. 15 of 1996]</strong>; Establishment of the Botswana Telecommunication Authority (BTA) and the beginning of liberalisation of the telecommunications market.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">1997</div>
+            <div class="timeline-card">
+              <div class="tl-year">1997</div>
+              <p>Setting up of the BTA with the assistance of the <strong>Swedish Management Group (SMG)</strong> and publishing of the tender for the procurement of mobile telephone services.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">1998</div>
+            <div class="timeline-card">
+              <div class="tl-year">1998</div>
+              <p>Beginning of competition and awarding of the first fifteen year mobile licences to <strong>Mascom Wireless (Pty) Ltd</strong> and <strong>Vista Cellular</strong> (now Orange Botswana). The licences were awarded with a ten (10) year exclusivity period.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">1999</div>
+            <div class="timeline-card">
+              <div class="tl-year">1999</div>
+              <p>Licensing of the first two commercial FM Broadcasting Radio Stations; <strong>Yarona FM</strong> and <strong>Gabz-FM</strong>. BTA awarded the first Internet Service Providers' licences.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">2000</div>
+            <div class="timeline-card">
+              <div class="tl-year">2000</div>
+              <p>Hosting of the <strong>Telecommunications Regulators Association of Southern Africa (TRASA)</strong> Programme office. BOCRA moved into its own building. National Roaming was suspended. BOCRA issued two rulings directing BTC to provide leased line capacity to two Internet Service Providers.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">2001</div>
+            <div class="timeline-card">
+              <div class="tl-year">2001</div>
+              <p>Implementation of the new <strong>seven digit-numbering plan</strong>. The International Telecommunication Union (ITU) conducted a study on BOCRA and declared it a <strong>best practice model</strong> for regulators and policy-makers to emulate.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">2002</div>
+            <div class="timeline-card">
+              <div class="tl-year">2002</div>
+              <p>Study on the <strong>Pricing of Telecommunications Services</strong> in Botswana. ITU Secretary General Mr. Yoshio Untsumi officially opened the BOCRA Office.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">2003</div>
+            <div class="timeline-card">
+              <div class="tl-year">2003</div>
+              <p>BTC was granted a fifteen (15) year licence. BOCRA issued <strong>Interconnection Guidelines</strong> and the first interconnection ruling between Botswana Telecommunication Corporation (BTC), Mascom Wireless and Orange Botswana.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">2004</div>
+            <div class="timeline-card">
+              <div class="tl-year">2004</div>
+              <p>Study on <strong>Further Liberalisation of the Telecommunications market</strong> in Botswana that led to the August 2006 Minister's pronouncement on the lifting of the restriction on the provision of VoIP and permission for mobile operators to self-provide transmission links.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">2005</div>
+            <div class="timeline-card">
+              <div class="tl-year">2005</div>
+              <p>Installation of the <strong>Automated Frequency Management System (AFMS)</strong> which simplifies many responsibilities of radio Frequency Spectrum administration. Study on Cost Model and Pricing Framework for the Telecommunications Market in Botswana.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">2006</div>
+            <div class="timeline-card">
+              <div class="tl-year">2006</div>
+              <p>Development of the <strong>Telephone and Draft Universal Service and Access Policy</strong>.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">2007</div>
+            <div class="timeline-card">
+              <div class="tl-year">2007</div>
+              <p>Introduction of the <strong>Service Neutral Licensing Regime</strong> leading to the birth of the BTC mobile phone service arm — <strong>beMOBILE</strong>.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">2008</div>
+            <div class="timeline-card">
+              <div class="tl-year">2008</div>
+              <p>Development of the <strong>Telecommunications Technical Specifications and Type Approval Procedures</strong>. Development of the Telephone Numbering Policy and the Spectrum Management Strategy.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">2009</div>
+            <div class="timeline-card">
+              <div class="tl-year">2009</div>
+              <p>Official opening of the spectrum monitoring facility — <strong>The Spectrum House</strong>. Market study of the telecommunications sector in Botswana and the beginning of the Mobile Phone SIM-card Registration requirement.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">2010</div>
+            <div class="timeline-card">
+              <div class="tl-year">2010</div>
+              <p>Allocation of the <strong>Fixed Wireless Access Spectrum</strong> and the development of a Cost Model and Pricing Framework for Communications Services in Botswana.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">2011</div>
+            <div class="timeline-card">
+              <div class="tl-year">2011</div>
+              <p>Directive on the implementation of the Recommendations of the <strong>Cost Model and Pricing Framework</strong> for Communications Services in Botswana leading to the reduction of wholesale and retail tariffs.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">2013</div>
+            <div class="timeline-card">
+              <div class="tl-year">2013</div>
+              <p>Establishment of the <strong>Botswana Communications Regulatory Authority (BOCRA)</strong> on 1st April 2013 through the Communications Regulatory Authority Act, 2012 (CRA Act) — creating a converged regulatory authority for telecommunications, ICTs, broadcasting, and postal services.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <div class="history-stats">
+      <div class="container">
+        <div class="stats-row">
+          <div class="hist-stat">
+            <div class="num">1996</div>
+            <div class="lbl">Year Regulation Began</div>
+          </div>
+          <div class="hist-stat">
+            <div class="num">2013</div>
+            <div class="lbl">BOCRA Established</div>
+          </div>
+          <div class="hist-stat">
+            <div class="num">16+</div>
+            <div class="lbl">Years of Progressive Reform</div>
+          </div>
+          <div class="hist-stat">
+            <div class="num">ITU</div>
+            <div class="lbl">Best Practice Regulator</div>
+
+  </main>
+
+  
+
+<footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <div class="footer-logo-box">
+            <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" class="footer-logo">
+          </div>
+          <p class="mt-4"><strong>Botswana Communications Regulatory Authority</strong></p>
+          <p><i class="fa-solid fa-location-dot"></i> Plot 50671 Independence Avenue, Gaborone</p>
+          <p><i class="fa-solid fa-phone"></i> +267 395 7755</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@bocra.org.bw">info@bocra.org.bw</a></p>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About BOCRA</a></li>
+            <li><a href="legislation.html">Mandate & Regulation</a></li>
+            <li><a href="licensing.html">Licensing</a></li>
+            <li><a href="media.html">Media Center</a></li>
+            <li><a href="tenders.html">Tenders</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="tariffs.html">Tariffs</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="important-links.html">Important Links</a></li>
+            <li><a href="privacy-notice.html">Privacy Notice</a></li>
+            <li><a href="https://registration.bocra.org.bw/" target="_blank">BOCRA Staff Mail</a></li>
+          </ul>
+        </div>
+        <div class="footer-col social-col">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/BOCRABW/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/bocra_bw" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bocra_bw" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://bw.linkedin.com/company/botswana-communications-regulatory-authority" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <div class="newsletter-signup mt-4">
+            <p>Subscribe to our newsletter</p>
+            <div class="input-group">
+              <input type="email" placeholder="Email Address">
+              <button><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container fb-inner">
+        <p>&copy; <span id="year">2026</span> Botswana Communications Regulatory Authority. All Rights Reserved.</p>
+        <p class="dev-link">Design & Development modernized for premium experience.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

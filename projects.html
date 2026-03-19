@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Key Projects | BOCRA</title>
+  <meta name="description" content="Explore BOCRA's strategic projects: UASF, Number Portability, Infrastructure Sharing, and Digital Transformation." />
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .projects-hero {
+      background: linear-gradient(rgba(0,30,70,0.82), rgba(0,30,70,0.82)), url('hero_section.png') center/cover no-repeat;
+      padding: 100px 0 140px;
+    }
+    .projects-hero h1 { color: #fff; font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; }
+    .projects-hero p { color: rgba(255,255,255,0.9); }
+    @media (max-width: 768px) {
+      .projects-hero { padding: 70px 0 100px; }
+      .projects-hero h1 { font-size: 2.2rem; }
+      .project-grid { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width: 480px) {
+      .projects-hero h1 { font-size: 1.8rem; }
+    }
+    .hero-breadcrumb {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.85); }
+    .hero-breadcrumb span { color: var(--accent-teal); font-weight: 600; }
+    
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .project-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-normal);
+      border-bottom: 4px solid transparent;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover { 
+      transform: translateY(-10px); 
+      box-shadow: var(--shadow-xl);
+      border-bottom-color: var(--secondary-azure);
+    }
+    
+    .project-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--bg-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--primary-navy);
+      margin-bottom: 25px;
+    }
+    
+    .project-card h3 { 
+      font-size: 1.4rem; 
+      color: var(--primary-navy); 
+      margin-bottom: 15px; 
+      font-weight: 700;
+    }
+    
+    .project-card p { 
+      line-height: 1.6; 
+      color: var(--text-gray); 
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
+    
+    .project-tag {
+      display: inline-block;
+      padding: 5px 15px;
+      background: rgba(7, 121, 191, 0.1);
+      color: var(--secondary-azure);
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
+    .timeline-section {
+      padding: 100px 0;
+      background: var(--bg-light);
+    }
+    @media (max-width: 480px) {
+      .projects-hero h1 { font-size: 1.8rem; }
+    }
+    
+    /* Modal Styles */
+    .project-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,30,70,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      padding: 20px;
+      align-items: center; justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .project-modal.active { display: flex; opacity: 1; }
+    
+    .modal-content {
+      background: #fff;
+      max-width: 800px;
+      width: 100%;
+      border-radius: 20px;
+      position: relative;
+      padding: 50px;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: translateY(30px);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    }
+    .project-modal.active .modal-content { transform: translateY(0); }
+    
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 20px;
+      width: 40px; height: 40px;
+      background: #f1f5f9;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary-navy);
+      transition: all 0.2s;
+    }
+    .modal-close:hover { background: var(--primary-maroon); color: #fff; }
+    
+    @media (max-width: 768px) {
+      .modal-content { padding: 30px 20px; }
+      .project-modal { padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-banner" id="top-banner">
+    <div class="container top-banner-content">
+      <div class="top-utility-stack">
+        <a href="https://registration.bocra.org.bw/" target="_blank" class="top-bar-link"><i class="fa-solid fa-laptop"></i> BOCRA Portal</a>
+        <a href="licensing.html" class="top-bar-link"><i class="fa-solid fa-file-signature"></i> Licensing</a>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search BOCRA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" />
+      </a>
+      <div class="nav-wrapper-outer">
+        <div class="nav-wrapper">
+          <nav class="main-nav" id="main-nav">
+            <ul class="nav-list">
+              <li class="has-dropdown">
+                <a href="#">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="profile.html">Profile</a></li>
+                  <li><a href="ce-message.html">A Word From The Chief Executive</a></li>
+                  <li><a href="history.html">History Of Communication Regulation</a></li>
+                  <li><a href="organogram.html">Organogram</a></li>
+                  <li><a href="about.html#board">Board of Directors</a></li>
+                  <li><a href="executives.html">Executive Management</a></li>
+                  <li><a href="careers.html">Careers</a></li>
+                </ul>
+              </li>
+              <li class="has-dropdown">
+                <a href="#">Mandate <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="legislation.html">Legislation</a></li>
+                  <li><a href="telecommunications.html">Telecommunications</a></li>
+                  <li><a href="broadcasting.html">Broadcasting</a></li>
+                  <li><a href="postal.html">Postal</a></li>
+                  <li><a href="internet.html">Internet</a></li>
+                </ul>
+              </li>
+              <li id="nav-projects"><a href="projects.html" class="active">Projects</a></li>
+              <li class="has-dropdown">
+                <a href="#">Documents <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="draft-docs.html">Draft Documents And Legislation</a></li>
+                  <li><a href="https://www.bocra.org.bw/sites/default/files/2024-03/ICT%20Licensing%20Framework.pdf">ICT Licencing Framework</a></li>
+                  <li><a href="itu-workshop.html">ITU Capacity Building Workshop</a></li>
+                </ul>
+              </li>
+              <li id="nav-complaints"><a href="complaints.html">Complaints</a></li>
+              <li id="nav-media"><a href="media.html">Media</a></li>
+              <li id="nav-tenders"><a href="tenders.html">Tenders</a></li>
+              <li><a href="https://registration.bocra.org.bw/" class="nav-highlight" target="_blank">ASMS-WebCP</a></li>
+            </ul>
+          </nav>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="projects-hero slide-in-bottom">
+    <div class="container text-white">
+      <div class="hero-breadcrumb fade-in-up">
+        <a href="index.html">Home</a> 
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i> 
+        <span>Strategic Projects</span>
+      </div>
+      <h1 class="fade-in-up delay-1" style="font-size: 3.5rem; font-weight: 800; margin-bottom: 20px;">Shaping the Future</h1>
+      <p class="fade-in-up delay-2" style="font-size: 1.2rem; max-width: 800px; opacity: 0.9;">Harnessing technology to connect every corner of Botswana through high-impact regulatory initiatives.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-badge">Ongoing Initiatives</div>
+        <h2>Key Strategic Projects</h2>
+      </div>
+      
+      <div class="project-grid fade-in-up">
+        <div class="project-card">
+          <span class="project-tag">Nationwide Access</span>
+          <div class="project-icon"><i class="fa-solid fa-tower-broadcast"></i></div>
+          <h3>Universal Access & Service Fund (UASF)</h3>
+          <p>BOCRA oversees the implementation of connectivity projects under the UASF to bridge the digital divide.</p>
+          <button onclick="showProject('uasf')" class="btn-text" style="background:none; border:none; color: var(--secondary-azure); font-weight: 700; cursor:pointer; padding:0;">Read Full details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        
+        <div class="project-card">
+          <span class="project-tag">Strategic Reach</span>
+          <div class="project-icon"><i class="fa-solid fa-globe"></i></div>
+          <h3>National Broadband Strategy</h3>
+          <p>Coordinated approach to building a robust ICT ecosystem and high-speed networks across Botswana.</p>
+          <button onclick="showProject('broadband')" class="btn-text" style="background:none; border:none; color: var(--secondary-azure); font-weight: 700; cursor:pointer; padding:0;">Read Full details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        
+        <div class="project-card">
+          <span class="project-tag">Broadcasting</span>
+          <div class="project-icon"><i class="fa-solid fa-tv"></i></div>
+          <h3>Digital Switchover (DSO)</h3>
+          <p>Transitioning from old analogue to modern digital broadcasting for enhanced signal quality and capacity.</p>
+          <button onclick="showProject('dso')" class="btn-text" style="background:none; border:none; color: var(--secondary-azure); font-weight: 700; cursor:pointer; padding:0;">Read Full details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        
+        <div class="project-card">
+          <span class="project-tag">Efficiency</span>
+          <div class="project-icon"><i class="fa-solid fa-share-nodes"></i></div>
+          <h3>Infrastructure Sharing</h3>
+          <p>Framework requiring operators to share passive infrastructure to reduce environment impact and costs.</p>
+          <button onclick="showProject('sharing')" class="btn-text" style="background:none; border:none; color: var(--secondary-azure); font-weight: 700; cursor:pointer; padding:0;">Read Full details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        
+        <div class="project-card">
+          <span class="project-tag">Economic Benefit</span>
+          <div class="project-icon"><i class="fa-solid fa-phone-flip"></i></div>
+          <h3>Cost Modelling Project</h3>
+          <p>Periodic reporting on cost modelling to ensures fair pricing and sustainable regulation.</p>
+          <button onclick="showProject('costing')" class="btn-text" style="background:none; border:none; color: var(--secondary-azure); font-weight: 700; cursor:pointer; padding:0;">Read Full details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        
+        <div class="project-card">
+          <span class="project-tag">Spectrum Planning</span>
+          <div class="project-icon"><i class="fa-solid fa-microchip"></i></div>
+          <h3>Frequency Spectrum Planning</h3>
+          <p>Allocating and patrolling national radio frequencies to prevent interference and ensure efficiency.</p>
+          <button onclick="showProject('spectrum')" class="btn-text" style="background:none; border:none; color: var(--secondary-azure); font-weight: 700; cursor:pointer; padding:0;">Read Full details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="project-modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      <div id="modalBody">
+        <!-- Content injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const projectData = {
+      uasf: {
+        title: "Universal Access & Service Fund (UASF)",
+        badge: "Connectivity Initiative",
+        info: "<p>The UASF is a strategic intervention by the Government of Botswana, administered by BOCRA, to ensure that basic communication services are available and affordable to all citizens, particularly those in rural, remote, and underserved areas.</p><p>Key focuses include extending 4G/LTE coverage to rural villages, providing free Wi-Fi in public clinics and kgotlas, and subsidizing digital literacy training nationwide.</p>"
+      },
+      broadband: {
+        title: "National Broadband Strategy",
+        badge: "National Ecosystem",
+        info: "<p>This is a roadmap designed to transform Botswana into a globally competitive, knowledge-based economy. It facilitates the construction and use of high-speed, reliable, and affordable ICT networks.</p><p>BOCRA facilitates fiber-optic backbone infrastructure deployment and promotes open-access frameworks across the country.</p>"
+      },
+      dso: {
+        title: "Digital Switchover (DSO)",
+        badge: "Broadcast Transition",
+        info: "<p>The DSO refers to the transition from old analogue television broadcasting to modern digital systems. This freed up a significant portion of radio frequency spectrum, known as the 'Digital Dividend'.</p><p>This spectrum is then re-allocated by BOCRA to mobile network operators to significantly boost mobile broadband speeds and rural coverage.</p>"
+      },
+      sharing: {
+        title: "Infrastructure Sharing Guidelines",
+        badge: "Regulatory Efficiency",
+        info: "<p>BOCRA requires telecommunications operators to share physical infrastructure components like towers, masts, antennae sites, and underground ducts.</p><p>The goal is to reduce environmental impact, lower barrier of entry for new players, and ultimately lower the cost of services for consumers.</p>"
+      },
+      costing: {
+        title: "Cost Modelling & Pricing Project",
+        badge: "Fair Competition",
+        info: "<p>BOCRA conducts cost modelling to ensure prices charged by telecommunications and postal operators are fair and based on a cost-of-service delivery model.</p><p>This prevents monopolistic pricing and ensures a level playing field for both new and established market participants.</p>"
+      },
+      spectrum: {
+        title: "Frequency Spectrum Planning",
+        badge: "Spectrum Management",
+        info: "<p>Radio frequency spectrum is a finite national resource. BOCRA plans, allocates, and monitors this resource to prevent interference.</p><p>This project ensures crystal clear communications for emergency services, aviation, and national mobile network users.</p>"
+      }
+    };
+
+    function showProject(id) {
+      const p = projectData[id];
+      const body = document.getElementById('modalBody');
+      body.innerHTML = `
+        <div class="section-badge">${p.badge}</div>
+        <h2 style="color: var(--primary-navy); margin-bottom: 25px; font-size: 2rem;">${p.title}</h2>
+        <div style="font-size: 1.15rem; line-height: 1.8; color: var(--text-gray);">
+          ${p.info}
+        </div>
+      `;
+      document.getElementById('projectModal').classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scroll
+    }
+
+    function closeModal() {
+      document.getElementById('projectModal').classList.remove('active');
+      document.body.style.overflow = 'auto'; // Re-enable scroll
+    }
+
+    // Close on escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+    
+    // Close on outside click
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('projectModal');
+      if (e.target === modal) closeModal();
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <div class="footer-logo-box">
+            <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" class="footer-logo">
+          </div>
+          <p class="mt-4"><strong>Botswana Communications Regulatory Authority</strong></p>
+          <p><i class="fa-solid fa-location-dot"></i> Plot 50671 Independence Avenue, Gaborone</p>
+          <p><i class="fa-solid fa-phone"></i> +267 395 7755</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@bocra.org.bw">info@bocra.org.bw</a></p>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About BOCRA</a></li>
+            <li><a href="legislation.html">Mandate & Regulation</a></li>
+            <li><a href="licensing.html">Licensing</a></li>
+            <li><a href="media.html">Media Center</a></li>
+            <li><a href="tenders.html">Tenders</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="tariffs.html">Tariffs</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="important-links.html">Important Links</a></li>
+            <li><a href="privacy-notice.html">Privacy Notice</a></li>
+            <li><a href="https://registration.bocra.org.bw/" target="_blank">BOCRA Staff Mail</a></li>
+          </ul>
+        </div>
+        <div class="footer-col social-col">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/BOCRABW/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/bocra_bw" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bocra_bw" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://bw.linkedin.com/company/botswana-communications-regulatory-authority" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <div class="newsletter-signup mt-4">
+            <p>Subscribe to our newsletter</p>
+            <div class="input-group">
+              <input type="email" placeholder="Email Address">
+              <button><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container fb-inner">
+        <p>&copy; <span id="year">2026</span> Botswana Communications Regulatory Authority. All Rights Reserved.</p>
+        <p class="dev-link">Design & Development modernized for premium experience.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

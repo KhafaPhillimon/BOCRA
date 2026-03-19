@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organogram | Botswana Communications Regulatory Authority</title>
+  <meta name="description" content="BOCRA's organisational structure showing five departments each headed by a Director, in support of a Digitally Connected Botswana." />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Hero */
+    .org-hero {
+      background: var(--gradient-dark);
+      padding: 80px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+    .org-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%; right: -8%;
+      width: 550px; height: 550px;
+      background: radial-gradient(circle, rgba(0,169,165,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .org-hero-content { position: relative; z-index: 2; }
+    .org-hero h1 { color: #fff; font-size: 3.5rem; font-weight: 800; margin-bottom: 16px; }
+    .org-hero p  { color: rgba(255,255,255,0.82); font-size: 1.15rem; max-width: 600px; }
+    .hero-breadcrumb {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 20px;
+    }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.75); }
+    .hero-breadcrumb a:hover { color: var(--accent-teal); }
+    .hero-breadcrumb span { color: var(--accent-teal); font-weight: 600; }
+
+    /* Org Chart visual */
+    .org-chart-section { padding: 80px 0 60px; }
+
+    .org-intro {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 60px;
+    }
+    .org-intro h2 { font-size: 2.4rem; color: var(--primary-navy); margin-bottom: 16px; }
+    .org-intro p  { font-size: 1.1rem; color: var(--text-gray); line-height: 1.8; }
+
+    /* Org Chart Tree */
+    .org-tree { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+    /* Top level - Board + CE */
+    .org-level { display: flex; justify-content: center; gap: 24px; margin-bottom: 0; position: relative; }
+    .org-level + .org-level { margin-top: 40px; }
+
+    .org-node {
+      background: #fff;
+      border-radius: var(--border-radius);
+      padding: 22px 28px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      min-width: 200px;
+      max-width: 240px;
+      position: relative;
+      transition: var(--transition-normal);
+      border-top: 4px solid var(--secondary-azure);
+    }
+    .org-node:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .org-node.top-node {
+      background: var(--gradient-dark);
+      border-top-color: var(--accent-teal);
+      min-width: 260px;
+    }
+    .org-node.top-node .node-icon { background: rgba(255,255,255,0.15); color: var(--accent-teal); }
+    .org-node.top-node .node-title { color: #fff; }
+    .org-node.top-node .node-sub   { color: rgba(255,255,255,0.7); }
+    .org-node.ce-node {
+      background: linear-gradient(135deg, #0779bf, #00A9A5);
+      border-top-color: #00A9A5;
+    }
+    .org-node.ce-node .node-icon  { background: rgba(255,255,255,0.15); color: #fff; }
+    .org-node.ce-node .node-title { color: #fff; }
+    .org-node.ce-node .node-sub   { color: rgba(255,255,255,0.75); }
+
+    .node-icon {
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      background: rgba(7,121,191,0.1);
+      color: var(--secondary-azure);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      margin: 0 auto 14px;
+    }
+    .node-title { font-size: 1rem; font-weight: 700; color: var(--primary-navy); font-family: var(--font-heading); line-height: 1.3; }
+    .node-sub   { font-size: 0.8rem; color: var(--text-gray); margin-top: 5px; }
+
+    /* Connector lines */
+    .connector-down {
+      width: 3px;
+      background: linear-gradient(to bottom, var(--secondary-azure), var(--accent-teal));
+      height: 40px;
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+    .connector-row {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+    }
+    .connector-row::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      max-width: 1000px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--secondary-azure), var(--accent-teal), var(--secondary-azure), transparent);
+    }
+    .connector-branches {
+      display: flex;
+      justify-content: space-around;
+      width: 80%;
+      max-width: 1000px;
+    }
+    .connector-branch {
+      width: 3px;
+      height: 35px;
+      background: linear-gradient(to bottom, var(--secondary-azure), var(--accent-teal));
+      border-radius: 2px;
+    }
+
+    /* Department cards */
+    .departments-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .dept-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      padding: 28px 22px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      min-width: 175px;
+      max-width: 200px;
+      flex: 1;
+      transition: var(--transition-normal);
+      border-top: 4px solid var(--secondary-azure);
+      cursor: default;
+    }
+    .dept-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .dept-card:nth-child(1) { border-top-color: #0D2C5E; }
+    .dept-card:nth-child(2) { border-top-color: #0779bf; }
+    .dept-card:nth-child(3) { border-top-color: #00A9A5; }
+    .dept-card:nth-child(4) { border-top-color: #5B21B6; }
+    .dept-card:nth-child(5) { border-top-color: #DC2626; }
+    .dept-icon {
+      width: 58px; height: 58px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 16px;
+    }
+    .dept-card:nth-child(1) .dept-icon { background: rgba(13,44,94,0.1); color: #0D2C5E; }
+    .dept-card:nth-child(2) .dept-icon { background: rgba(7,121,191,0.1); color: #0779bf; }
+    .dept-card:nth-child(3) .dept-icon { background: rgba(0,169,165,0.1); color: #00A9A5; }
+    .dept-card:nth-child(4) .dept-icon { background: rgba(91,33,182,0.1); color: #5B21B6; }
+    .dept-card:nth-child(5) .dept-icon { background: rgba(220,38,38,0.1); color: #DC2626; }
+    .dept-name { font-size: 0.95rem; font-weight: 700; color: var(--primary-navy); font-family: var(--font-heading); line-height: 1.3; }
+    .dept-label { font-size: 0.78rem; color: var(--text-gray); margin-top: 6px; }
+
+    /* Objectives */
+    .objectives-section {
+      background: var(--bg-light);
+      padding: 70px 0;
+    }
+    .objectives-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 24px;
+      margin-top: 50px;
+    }
+    .objective-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      padding: 30px 26px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: var(--transition-normal);
+      border-left: 4px solid var(--secondary-azure);
+    }
+    .objective-card:hover { transform: translateX(6px); box-shadow: var(--shadow-md); border-left-color: var(--accent-teal); }
+    .obj-num {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--gradient-dark);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .obj-text h4 { color: var(--primary-navy); font-size: 1rem; margin-bottom: 7px; }
+    .obj-text p  { color: var(--text-gray); font-size: 0.9rem; line-height: 1.65; margin: 0; }
+
+    @media (max-width: 900px) {
+      .org-hero h1 { font-size: 2.2rem; }
+      .dept-card { min-width: 140px; }
+      .connector-row::before { width: 90%; }
+      .connector-branches { width: 90%; }
+    }
+    @media (max-width: 600px) {
+      .departments-row { gap: 14px; }
+      .dept-card { min-width: 130px; padding: 20px 14px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Utility Bar -->
+  <div class="top-banner" id="top-banner">
+    <div class="container top-banner-content">
+      <div class="top-utility-stack">
+        <a href="https://registration.bocra.org.bw/" target="_blank" class="top-bar-link"><i class="fa-solid fa-laptop"></i> BOCRA Portal</a>
+        <a href="licensing.html" class="top-bar-link"><i class="fa-solid fa-file-signature"></i> Licensing</a>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search BOCRA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" />
+      </a>
+      <div class="nav-wrapper-outer">
+        <div class="nav-wrapper" id="nav-wrapper">
+          <nav class="main-nav" id="main-nav">
+            <ul class="nav-list">
+              <li class="has-dropdown">
+                <a href="#">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="profile.html">Profile</a></li>
+                  <li><a href="ce-message.html">A Word From The Chief Executive</a></li>
+                  <li><a href="history.html">History Of Communication Regulation</a></li>
+                  <li><a href="organogram.html">Organogram</a></li>
+                  <li><a href="about.html#board">Board of Directors</a></li>
+                  <li><a href="executives.html">Executive Management</a></li>
+                  <li><a href="careers.html">Careers</a></li>
+                </ul>
+              </li>
+              <li class="has-dropdown">
+                <a href="#">Mandate <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="legislation.html">Legislation</a></li>
+                  <li><a href="telecommunications.html">Telecommunications</a></li>
+                  <li><a href="broadcasting.html">Broadcasting</a></li>
+                  <li><a href="postal.html">Postal</a></li>
+                  <li><a href="internet.html">Internet</a></li>
+                </ul>
+              </li>
+              <li><a href="projects.html">Projects</a></li>
+              <li class="has-dropdown">
+                <a href="#">Documents <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="draft-docs.html">Draft Documents And Legislation</a></li>
+                  <li><a href="https://www.bocra.org.bw/sites/default/files/2024-03/ICT%20Licensing%20Framework.pdf">ICT Licencing Framework</a></li>
+                  <li><a href="itu-workshop.html">ITU Capacity Building Workshop</a></li>
+                </ul>
+              </li>
+              <li><a href="complaints.html">Complaints</a></li>
+              <li><a href="media.html">Media</a></li>
+              <li><a href="tenders.html">Tenders</a></li>
+              <li><a href="https://registration.bocra.org.bw/" class="nav-highlight" target="_blank">ASMS-WebCP</a></li>
+            </ul>
+          </nav>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- Hero Section -->
+  <section class="inner-hero">
+    <div class="container">
+      <div class="hero-breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>About</span>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>Organogram</span>
+      </div>
+      <h1 class="fade-in-up">Organogram</h1>
+      <p class="fade-in-up delay-1">BOCRA's organisational structure showing our commitment to a Digitally Connected Botswana.</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Org Chart -->
+    <section class="org-chart-section">
+      <div class="container">
+        <div class="org-intro fade-in-up">
+          <div class="section-badge">Structure</div>
+          <h2>Organisational Structure</h2>
+          <p>BOCRA staff is currently divided into the following departments, each headed by a Director, ensuring focused delivery of our regulatory mandate.</p>
+        </div>
+
+        <div class="org-tree">
+
+          <!-- Board -->
+          <div class="org-level">
+            <div class="org-node top-node slide-in-bottom">
+              <div class="node-icon"><i class="fa-solid fa-chess-king"></i></div>
+              <div class="node-title">Board of Directors</div>
+              <div class="node-sub">7 Non-Executive Directors</div>
+            </div>
+          </div>
+
+          <div class="connector-down"></div>
+
+          <!-- CE -->
+          <div class="org-level">
+            <div class="org-node ce-node slide-in-bottom">
+              <div class="node-icon"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="node-title">Chief Executive</div>
+              <div class="node-sub">Martin Mokgware</div>
+            </div>
+          </div>
+
+          <div class="connector-down"></div>
+
+          <!-- Horizontal bar + branches -->
+          <div class="connector-row">
+            <div class="connector-branches">
+              <div class="connector-branch"></div>
+              <div class="connector-branch"></div>
+              <div class="connector-branch"></div>
+              <div class="connector-branch"></div>
+              <div class="connector-branch"></div>
+            </div>
+          </div>
+
+          <!-- Departments -->
+          <div class="departments-row" style="margin-top: 0;">
+            <div class="dept-card slide-in-bottom">
+              <div class="dept-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="dept-name">Compliance &amp; Monitoring</div>
+              <div class="dept-label">Director</div>
+            </div>
+            <div class="dept-card slide-in-bottom delay-1">
+              <div class="dept-icon"><i class="fa-solid fa-building-columns"></i></div>
+              <div class="dept-name">Corporate Support</div>
+              <div class="dept-label">Director</div>
+            </div>
+            <div class="dept-card slide-in-bottom delay-2">
+              <div class="dept-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="dept-name">Business Development</div>
+              <div class="dept-label">Director</div>
+            </div>
+            <div class="dept-card slide-in-bottom delay-3">
+              <div class="dept-icon"><i class="fa-solid fa-microchip"></i></div>
+              <div class="dept-name">Technical Services</div>
+              <div class="dept-label">Director</div>
+            </div>
+            <div class="dept-card slide-in-bottom" style="animation-delay:0.45s">
+              <div class="dept-icon"><i class="fa-solid fa-bullhorn"></i></div>
+              <div class="dept-name">Corporate Communications &amp; Relations</div>
+              <div class="dept-label">Director</div>
+    </section>
+
+    <!-- Organisational Objectives -->
+    <section class="objectives-section" id="objectives">
+      <div class="container">
+        <div class="section-header text-center fade-in-up">
+          <div class="section-badge">Mission in Action</div>
+          <h2>Organisational Objectives</h2>
+          <p>The strategic objectives that guide BOCRA's work across all departments.</p>
+        </div>
+
+        <div class="objectives-grid">
+          <div class="objective-card slide-in-bottom">
+            <div class="obj-num">1</div>
+            <div class="obj-text">
+              <h4>Facilitating Market Entry</h4>
+              <p>Facilitating entry of new service providers into the market to promote competition and innovation in Botswana's communications sector.</p>
+            </div>
+          </div>
+          <div class="objective-card slide-in-bottom delay-1">
+            <div class="obj-num">2</div>
+            <div class="obj-text">
+              <h4>Efficient Spectrum Management</h4>
+              <p>Managing the frequency spectrum efficiently in order to maximize frequency availability for all communications services.</p>
+            </div>
+          </div>
+          <div class="objective-card slide-in-bottom delay-2">
+            <div class="obj-num">3</div>
+            <div class="obj-text">
+              <h4>Universal Service Financing</h4>
+              <p>Making provision for the financing of universal service in areas where this would otherwise be uneconomic and for special tariffs for disadvantaged users.</p>
+            </div>
+          </div>
+          <div class="objective-card slide-in-bottom">
+            <div class="obj-num">4</div>
+            <div class="obj-text">
+              <h4>Consumer Protection</h4>
+              <p>Promoting the development of user representation and instituting consumer protection measures to safeguard the public interest.</p>
+            </div>
+          </div>
+          <div class="objective-card slide-in-bottom delay-1">
+            <div class="obj-num">5</div>
+            <div class="obj-text">
+              <h4>Organisational Excellence</h4>
+              <p>Developing BOCRA as a dynamic, open, transparent and respected organisation with highly competent and well-motivated staff — a model regulatory body.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Department Details -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center fade-in-up">
+          <div class="section-badge">Departments</div>
+          <h2>Our Five Departments</h2>
+          <p>Each department is headed by a Director and plays a vital role in BOCRA's regulatory mission.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(290px,1fr)); gap:25px; margin-top:50px;">
+
+          <div style="background:#fff; border-radius:16px; padding:35px 28px; box-shadow:var(--shadow-md); border-top:4px solid #0D2C5E; transition:var(--transition-normal);" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+            <div style="width:58px;height:58px;border-radius:14px;background:rgba(13,44,94,0.1);color:#0D2C5E;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;"><i class="fa-solid fa-shield-halved"></i></div>
+            <h4 style="color:var(--primary-navy);margin-bottom:10px;">Compliance &amp; Monitoring</h4>
+            <p style="color:var(--text-gray);font-size:0.92rem;line-height:1.75;">Responsible for ensuring adherence to regulations and monitoring the performance of licensed operators across all sectors of the communications industry.</p>
+          </div>
+
+          <div style="background:#fff; border-radius:16px; padding:35px 28px; box-shadow:var(--shadow-md); border-top:4px solid #0779bf; transition:var(--transition-normal);" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+            <div style="width:58px;height:58px;border-radius:14px;background:rgba(7,121,191,0.1);color:#0779bf;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;"><i class="fa-solid fa-building-columns"></i></div>
+            <h4 style="color:var(--primary-navy);margin-bottom:10px;">Corporate Support</h4>
+            <p style="color:var(--text-gray);font-size:0.92rem;line-height:1.75;">Provides administrative, financial, human resources, and ICT support services that enable BOCRA to operate efficiently and effectively.</p>
+          </div>
+
+          <div style="background:#fff; border-radius:16px; padding:35px 28px; box-shadow:var(--shadow-md); border-top:4px solid #00A9A5; transition:var(--transition-normal);" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+            <div style="width:58px;height:58px;border-radius:14px;background:rgba(0,169,165,0.1);color:#00A9A5;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;"><i class="fa-solid fa-chart-line"></i></div>
+            <h4 style="color:var(--primary-navy);margin-bottom:10px;">Business Development</h4>
+            <p style="color:var(--text-gray);font-size:0.92rem;line-height:1.75;">Focuses on market analysis, licensing, policy development, and stakeholder engagement to drive sustainable growth in Botswana's communications sector.</p>
+          </div>
+
+          <div style="background:#fff; border-radius:16px; padding:35px 28px; box-shadow:var(--shadow-md); border-top:4px solid #5B21B6; transition:var(--transition-normal);" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+            <div style="width:58px;height:58px;border-radius:14px;background:rgba(91,33,182,0.1);color:#5B21B6;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;"><i class="fa-solid fa-microchip"></i></div>
+            <h4 style="color:var(--primary-navy);margin-bottom:10px;">Technical Services</h4>
+            <p style="color:var(--text-gray);font-size:0.92rem;line-height:1.75;">Manages spectrum allocation, type approval, technical standards, and the deployment of technical infrastructure including the Spectrum Monitoring House.</p>
+          </div>
+
+          <div style="background:#fff; border-radius:16px; padding:35px 28px; box-shadow:var(--shadow-md); border-top:4px solid #DC2626; transition:var(--transition-normal);" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+            <div style="width:58px;height:58px;border-radius:14px;background:rgba(220,38,38,0.1);color:#DC2626;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;"><i class="fa-solid fa-bullhorn"></i></div>
+            <h4 style="color:var(--primary-navy);margin-bottom:10px;">Corporate Communications &amp; Relations</h4>
+            <p style="color:var(--text-gray);font-size:0.92rem;line-height:1.75;">Manages BOCRA's public image, media relations, stakeholder communication, and consumer education to ensure transparency and public trust.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  
+
+<footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <div class="footer-logo-box">
+            <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" class="footer-logo">
+          </div>
+          <p class="mt-4"><strong>Botswana Communications Regulatory Authority</strong></p>
+          <p><i class="fa-solid fa-location-dot"></i> Plot 50671 Independence Avenue, Gaborone</p>
+          <p><i class="fa-solid fa-phone"></i> +267 395 7755</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@bocra.org.bw">info@bocra.org.bw</a></p>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About BOCRA</a></li>
+            <li><a href="legislation.html">Mandate & Regulation</a></li>
+            <li><a href="licensing.html">Licensing</a></li>
+            <li><a href="media.html">Media Center</a></li>
+            <li><a href="tenders.html">Tenders</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="tariffs.html">Tariffs</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="important-links.html">Important Links</a></li>
+            <li><a href="privacy-notice.html">Privacy Notice</a></li>
+            <li><a href="https://registration.bocra.org.bw/" target="_blank">BOCRA Staff Mail</a></li>
+          </ul>
+        </div>
+        <div class="footer-col social-col">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/BOCRABW/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/bocra_bw" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bocra_bw" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://bw.linkedin.com/company/botswana-communications-regulatory-authority" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <div class="newsletter-signup mt-4">
+            <p>Subscribe to our newsletter</p>
+            <div class="input-group">
+              <input type="email" placeholder="Email Address">
+              <button><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container fb-inner">
+        <p>&copy; <span id="year">2026</span> Botswana Communications Regulatory Authority. All Rights Reserved.</p>
+        <p class="dev-link">Design & Development modernized for premium experience.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Draft Documents and Legislation | Botswana Communications Regulatory Authority</title>
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .docs-hero {
+      background: var(--gradient-dark);
+      padding: 80px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+    .docs-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%; right: -8%;
+      width: 550px; height: 550px;
+      background: radial-gradient(circle, rgba(0,169,165,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .docs-hero-content { position: relative; z-index: 2; }
+    .docs-hero h1 { color: #fff; font-size: 3.5rem; font-weight: 800; margin-bottom: 16px; }
+    .docs-hero p  { color: rgba(255,255,255,0.82); font-size: 1.15rem; max-width: 600px; }
+    .hero-breadcrumb {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.85); }
+    .hero-breadcrumb span { color: var(--accent-teal); font-weight: 600; }
+    .main-content { padding: 80px 0; background: #fff; }
+    
+    .doc-section { margin-bottom: 60px; }
+    .doc-section h2 { 
+      color: var(--primary-navy); 
+      margin-bottom: 30px; 
+      font-size: 2rem;
+      border-bottom: 3px solid var(--accent-teal);
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .doc-card {
+      background: #f8fafc;
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: var(--border-radius);
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+    }
+    .doc-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--secondary-azure);
+    }
+    .doc-card::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 40px; height: 40px;
+      background: var(--secondary-azure);
+      clip-path: polygon(100% 0, 0 0, 100% 100%);
+      opacity: 0.1;
+    }
+
+    .doc-card i {
+      font-size: 2rem;
+      color: var(--secondary-azure);
+      margin-bottom: 15px;
+    }
+    .doc-card h3 {
+      font-size: 1.1rem;
+      color: var(--primary-navy);
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-teal);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .download-btn:hover { color: var(--primary-navy); }
+
+    .search-filter-bar {
+      background: #f1f5f9;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    .search-filter-bar input {
+      flex: 1;
+      padding: 12px 20px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      outline: none;
+    }
+    .search-filter-bar button {
+      padding: 12px 25px;
+      background: var(--primary-navy);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition-normal);
+    }
+    .search-filter-bar button:hover { background: var(--secondary-azure); }
+
+    @media (max-width: 768px) {
+      .docs-hero h1 { font-size: 2.2rem; }
+      .search-filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search-filter-bar button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-banner" id="top-banner">
+    <div class="container top-banner-content">
+      <div class="top-utility-stack">
+        <a href="https://registration.bocra.org.bw/" target="_blank" class="top-bar-link"><i class="fa-solid fa-laptop"></i> BOCRA Portal</a>
+        <a href="licensing.html" class="top-bar-link"><i class="fa-solid fa-file-signature"></i> Licensing</a>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search BOCRA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" />
+      </a>
+      <div class="nav-wrapper-outer">
+        <div class="nav-wrapper">
+          <nav class="main-nav" id="main-nav">
+            <ul class="nav-list">
+              <li class="has-dropdown">
+                <a href="#">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="profile.html">Profile</a></li>
+                  <li><a href="ce-message.html">A Word From The Chief Executive</a></li>
+                  <li><a href="history.html">History Of Communication Regulation</a></li>
+                  <li><a href="organogram.html">Organogram</a></li>
+                  <li><a href="about.html#board">Board of Directors</a></li>
+                  <li><a href="executives.html">Executive Management</a></li>
+                  <li><a href="careers.html">Careers</a></li>
+                </ul>
+              </li>
+              <li class="has-dropdown">
+                <a href="#">Mandate <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="legislation.html">Legislation</a></li>
+                  <li><a href="telecommunications.html">Telecommunications</a></li>
+                  <li><a href="broadcasting.html">Broadcasting</a></li>
+                  <li><a href="postal.html">Postal</a></li>
+                  <li><a href="internet.html">Internet</a></li>
+                </ul>
+              </li>
+              <li id="nav-projects"><a href="projects.html">Projects</a></li>
+              <li class="has-dropdown">
+                <a href="#">Documents <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="draft-docs.html">Draft Documents And Legislation</a></li>
+                  <li><a href="https://www.bocra.org.bw/sites/default/files/2024-03/ICT%20Licensing%20Framework.pdf">ICT Licencing Framework</a></li>
+                  <li><a href="itu-workshop.html">ITU Capacity Building Workshop</a></li>
+                </ul>
+              </li>
+              <li id="nav-complaints"><a href="complaints.html">Complaints</a></li>
+              <li id="nav-media"><a href="media.html">Media</a></li>
+              <li id="nav-tenders"><a href="tenders.html">Tenders</a></li>
+              <li><a href="https://registration.bocra.org.bw/" class="nav-highlight" target="_blank">ASMS-WebCP</a></li>
+            </ul>
+          </nav>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="docs-hero slide-in-bottom">
+    <div class="container docs-hero-content">
+      <div class="hero-breadcrumb fade-in-up">
+        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>Documents</span> <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>Draft Documents and Legislation</span>
+      </div>
+      <h1 class="fade-in-up delay-1">Documents & Legislation</h1>
+      <p class="fade-in-up delay-2">Access the latest draft bills, discussion papers, guidelines, and annual reports for public review and information.</p>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+      
+      <div class="search-filter-bar fade-in-up">
+        <i class="fa-solid fa-magnifying-glass" style="color:#64748b"></i>
+        <input type="text" placeholder="Search for documents by title or keywords..." id="docSearch">
+        <button>Search</button>
+      </div>
+
+      <div class="doc-section fade-in-up">
+        <h2>Latest Drafts & Bills</h2>
+        <div class="doc-grid">
+          
+          <div class="doc-card">
+            <i class="fa-regular fa-file-pdf"></i>
+            <h3>Draft Cybersecurity Bill 2025 - Attorney General Comments</h3>
+            <a href="https://www.bocra.org.bw/sites/default/files/sites/default/files/documents/Draft_Cybersecurity_Bill_2025_AG_Comments.pdf" class="download-btn" target="_blank">Download PDF <i class="fa-solid fa-download"></i></a>
+          </div>
+
+          <div class="doc-card">
+            <i class="fa-regular fa-file-pdf"></i>
+            <h3>Preamble to the Cybersecurity Bill (Revised)</h3>
+            <a href="https://www.bocra.org.bw/sites/default/files/sites/default/files/documents/Preamble_to_the_Cybersecurity_Bill_Revised.pdf" class="download-btn" target="_blank">Download PDF <i class="fa-solid fa-download"></i></a>
+          </div>
+
+          <div class="doc-card">
+            <i class="fa-regular fa-file-pdf"></i>
+            <h3>Digital Services Bill (Revised Draft) June 2025</h3>
+            <a href="https://www.bocra.org.bw/sites/default/files/sites/default/files/documents/Digital_Services_Bill_%28revised_draft%29June2025_0.pdf" class="download-btn" target="_blank">Download PDF <i class="fa-solid fa-download"></i></a>
+          </div>
+
+          <div class="doc-card">
+            <i class="fa-regular fa-file-pdf"></i>
+            <h3>Preamble for the Digital Services Bill (Revised)</h3>
+            <a href="https://www.bocra.org.bw/sites/default/files/sites/default/files/documents/Preamble_for_the_Digital_Services_Bill_Revised.pdf" class="download-btn" target="_blank">Download PDF <i class="fa-solid fa-download"></i></a>
+          </div>
+
+          <div class="doc-card">
+            <i class="fa-regular fa-file-pdf"></i>
+            <h3>Draft Discussion Paper - Local Content Guidelines</h3>
+            <a href="https://www.bocra.org.bw/sites/default/files/documents/DRAFT_DISCUSSION_PAPER_-_LOCAL_CONTENT_GUIDELINES.pdf" class="download-btn" target="_blank">Download PDF <i class="fa-solid fa-download"></i></a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="doc-section fade-in-up">
+        <h2>Annual Reports & Guidelines</h2>
+        <div class="doc-grid">
+          
+          <div class="doc-card">
+            <i class="fa-regular fa-file-lines"></i>
+            <h3>BOCRA Annual Report 2024 (Web Version)</h3>
+            <a href="https://www.bocra.org.bw/sites/default/files/documents/BOCRA%202024%20ANNUAL%20REPORT%20WEB%20VERSION.pdf" class="download-btn" target="_blank">Download PDF <i class="fa-solid fa-download"></i></a>
+          </div>
+
+          <div class="doc-card">
+            <i class="fa-regular fa-file-lines"></i>
+            <h3>UASF Annual Report 2024-25</h3>
+            <a href="https://www.bocra.org.bw/sites/default/files/sites/default/files/documents/UASF_Annual_Report_2024_25_WEB.pdf" class="download-btn" target="_blank">Download PDF <i class="fa-solid fa-download"></i></a>
+          </div>
+
+          <div class="doc-card">
+            <i class="fa-regular fa-file-pdf"></i>
+            <h3>Revised QoS & QoE Guidelines 2025</h3>
+            <a href="https://www.bocra.org.bw/sites/default/files/sites/default/files/documents/2025_Revised_QoS_QoE%20Guidelines.pdf" class="download-btn" target="_blank">Download PDF <i class="fa-solid fa-download"></i></a>
+          </div>
+
+          <div class="doc-card">
+            <i class="fa-regular fa-file-pdf"></i>
+            <h3>Electromagnetic Guidelines 2024</h3>
+            <a href="https://www.bocra.org.bw/sites/default/files/sites/default/files/documents/BOCRA_Electromagnetic_Guidelines_2024_V5_Online.pdf" class="download-btn" target="_blank">Download PDF <i class="fa-solid fa-download"></i></a>
+          </div>
+
+          <div class="doc-card">
+            <i class="fa-regular fa-file-pdf"></i>
+            <h3>Consumer Protection Policy</h3>
+            <a href="https://www.bocra.org.bw/sites/default/files/documents/Consumer_Protection_Policy_-_Communications_Sector.pdf" class="download-btn" target="_blank">Download PDF <i class="fa-solid fa-download"></i></a>
+          </div>
+
+          <div class="doc-card">
+            <i class="fa-regular fa-file-pdf"></i>
+            <h3>Website Application Security Guidelines</h3>
+            <a href="https://www.bocra.org.bw/sites/default/files/sites/default/files/documents/Website_Application_Security_Guidelines.pdf" class="download-btn" target="_blank">Download PDF <i class="fa-solid fa-download"></i></a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <div class="footer-logo-box">
+            <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" class="footer-logo">
+          </div>
+          <p class="mt-4"><strong>Botswana Communications Regulatory Authority</strong></p>
+          <p><i class="fa-solid fa-location-dot"></i> Plot 50671 Independence Avenue, Gaborone</p>
+          <p><i class="fa-solid fa-phone"></i> +267 395 7755</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@bocra.org.bw">info@bocra.org.bw</a></p>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About BOCRA</a></li>
+            <li><a href="legislation.html">Mandate & Regulation</a></li>
+            <li><a href="licensing.html">Licensing</a></li>
+            <li><a href="media.html">Media Center</a></li>
+            <li><a href="tenders.html">Tenders</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="tariffs.html">Tariffs</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="important-links.html">Important Links</a></li>
+            <li><a href="privacy-notice.html">Privacy Notice</a></li>
+            <li><a href="https://registration.bocra.org.bw/" target="_blank">BOCRA Staff Mail</a></li>
+          </ul>
+        </div>
+        <div class="footer-col social-col">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/BOCRABW/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/bocra_bw" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bocra_bw" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://bw.linkedin.com/company/botswana-communications-regulatory-authority" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <div class="newsletter-signup mt-4">
+            <p>Subscribe to our newsletter</p>
+            <div class="input-group">
+              <input type="email" placeholder="Email Address">
+              <button><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container fb-inner">
+        <p>&copy; <span id="year">2026</span> Botswana Communications Regulatory Authority. All Rights Reserved.</p>
+        <p class="dev-link">Design & Development modernized for premium experience.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

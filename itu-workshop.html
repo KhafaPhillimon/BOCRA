@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITU Capacity Building Workshop | Botswana Communications Regulatory Authority</title>
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .workshop-hero {
+      background: var(--gradient-dark);
+      padding: 80px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+    .workshop-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%; right: -8%;
+      width: 550px; height: 550px;
+      background: radial-gradient(circle, rgba(0,169,165,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .workshop-hero-content { position: relative; z-index: 2; }
+    .workshop-hero h1 { color: #fff; font-size: 3.5rem; font-weight: 800; margin-bottom: 16px; }
+    .workshop-hero p  { color: rgba(255,255,255,0.82); font-size: 1.15rem; max-width: 600px; }
+    .hero-breadcrumb {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.85); }
+    .hero-breadcrumb span { color: var(--accent-teal); font-weight: 600; }
+    .main-content { padding: 80px 0; background: #fff; }
+
+    .workshop-detail {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .event-info-box {
+      background: #f8fafc;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 40px;
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: var(--shadow-sm);
+    }
+    .event-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+    .meta-item i {
+      color: var(--accent-teal);
+      font-size: 1.2rem;
+    }
+
+    .workshop-text h2 { color: var(--primary-navy); margin: 30px 0 20px; font-size: 1.8rem; }
+    .workshop-text p { color: var(--text-gray); line-height: 1.8; margin-bottom: 20px; font-size: 1.1rem; }
+    .workshop-text ul { margin-bottom: 25px; padding-left: 20px; }
+    .workshop-text ul li { color: var(--text-gray); margin-bottom: 10px; line-height: 1.6; }
+
+    .cta-ribbon {
+      background: var(--gradient-primary);
+      color: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .cta-ribbon h3 { font-size: 1.6rem; margin-bottom: 15px; }
+    .cta-ribbon p { opacity: 0.9; margin-bottom: 25px; }
+    .btn-white {
+      background: #fff;
+      color: var(--primary-navy);
+      padding: 12px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: var(--transition-normal);
+      display: inline-block;
+    }
+    .btn-white:hover {
+      background: var(--accent-teal);
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .workshop-hero h1 { font-size: 2.2rem; }
+      .event-meta {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .event-info-box { padding: 25px 20px; }
+      .cta-ribbon { padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Utility Bar -->
+  <div class="top-banner" id="top-banner">
+    <div class="container top-banner-content">
+      <div class="top-utility-stack">
+        <a href="https://registration.bocra.org.bw/" target="_blank" class="top-bar-link"><i class="fa-solid fa-laptop"></i> BOCRA Portal</a>
+        <a href="licensing.html" class="top-bar-link"><i class="fa-solid fa-file-signature"></i> Licensing</a>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search BOCRA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" />
+      </a>
+      <div class="nav-wrapper-outer">
+        <div class="nav-wrapper">
+          <nav class="main-nav" id="main-nav">
+            <ul class="nav-list">
+              <li class="has-dropdown">
+                <a href="#">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="profile.html">Profile</a></li>
+                  <li><a href="ce-message.html">A Word From The Chief Executive</a></li>
+                  <li><a href="history.html">History Of Communication Regulation</a></li>
+                  <li><a href="organogram.html">Organogram</a></li>
+                  <li><a href="about.html#board">Board of Directors</a></li>
+                  <li><a href="executives.html">Executive Management</a></li>
+                  <li><a href="careers.html">Careers</a></li>
+                </ul>
+              </li>
+              <li class="has-dropdown">
+                <a href="#">Mandate <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="legislation.html">Legislation</a></li>
+                  <li><a href="telecommunications.html">Telecommunications</a></li>
+                  <li><a href="broadcasting.html">Broadcasting</a></li>
+                  <li><a href="postal.html">Postal</a></li>
+                  <li><a href="internet.html">Internet</a></li>
+                </ul>
+              </li>
+              <li id="nav-projects"><a href="projects.html">Projects</a></li>
+              <li class="has-dropdown">
+                <a href="#">Documents <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="draft-docs.html">Draft Documents And Legislation</a></li>
+                  <li><a href="https://www.bocra.org.bw/sites/default/files/2024-03/ICT%20Licensing%20Framework.pdf">ICT Licencing Framework</a></li>
+                  <li><a href="itu-workshop.html">ITU Capacity Building Workshop</a></li>
+                </ul>
+              </li>
+              <li id="nav-complaints"><a href="complaints.html">Complaints</a></li>
+              <li id="nav-media"><a href="media.html">Media</a></li>
+              <li id="nav-tenders"><a href="tenders.html">Tenders</a></li>
+              <li><a href="https://registration.bocra.org.bw/" class="nav-highlight" target="_blank">ASMS-WebCP</a></li>
+            </ul>
+          </nav>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+                
+
+  <section class="workshop-hero slide-in-bottom">
+    <div class="container workshop-hero-content">
+      <div class="hero-breadcrumb fade-in-up">
+        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>Documents</span> <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>ITU Capacity Building Workshop</span>
+      </div>
+      <h1 class="fade-in-up delay-1">ITU Capacity Building</h1>
+      <p class="fade-in-up delay-2">Enhancing Botswana's capacity in producing national statistics on Telecommunications and ICT Indicators.</p>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+      
+      <div class="workshop-detail fade-in-up">
+        
+        <div class="event-info-box">
+          <div class="event-meta">
+            <div class="meta-item"><i class="fa-solid fa-calendar-days"></i> 28 - 30 May 2018</div>
+            <div class="meta-item"><i class="fa-solid fa-location-dot"></i> Gaborone, Botswana</div>
+            <div class="meta-item"><i class="fa-solid fa-user-group"></i> ITU & BOCRA Partnership</div>
+          </div>
+          
+          <div class="workshop-text">
+            <h2>Workshop Overview</h2>
+            <p>The International Telecommunication Union (ITU), in collaboration with the Botswana Communications Regulatory Authority (BOCRA), organized a specialized capacity building workshop focused on ICT Indicators. This workshop aimed to strengthen the national capacity for collecting, processing, and disseminating information and communication technology (ICT) statistics.</p>
+            
+            <h2>Key Objectives</h2>
+            <ul>
+              <li>Understanding international standards for telecommunication and ICT indicators.</li>
+              <li>Improving data collection methodologies for household and business ICT usage.</li>
+              <li>Aligning national measurement frameworks with ITU's World Telecommunication/ICT Indicators (WTI).</li>
+              <li>Facilitating knowledge exchange between regional regulatory bodies and statistical offices.</li>
+            </ul>
+
+            <p>The workshop brought together representatives from various government ministries, regulatory agencies, and the national statistical office to ensure a harmonized approach to measuring digital development in Botswana.</p>
+          </div>
+        </div>
+
+        <div class="cta-ribbon">
+          <h3>Information & Resources</h3>
+          <p>For more information on ITU capacity development or to access the latest ICT indicator reports, please visit the ITU Academy or contact our information desk.</p>
+          <a href="https://academy.itu.int" target="_blank" class="btn-white">Visit ITU Academy</a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <div class="footer-logo-box">
+            <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" class="footer-logo">
+          </div>
+          <p class="mt-4"><strong>Botswana Communications Regulatory Authority</strong></p>
+          <p><i class="fa-solid fa-location-dot"></i> Plot 50671 Independence Avenue, Gaborone</p>
+          <p><i class="fa-solid fa-phone"></i> +267 395 7755</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@bocra.org.bw">info@bocra.org.bw</a></p>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About BOCRA</a></li>
+            <li><a href="legislation.html">Mandate & Regulation</a></li>
+            <li><a href="licensing.html">Licensing</a></li>
+            <li><a href="media.html">Media Center</a></li>
+            <li><a href="tenders.html">Tenders</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="tariffs.html">Tariffs</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="important-links.html">Important Links</a></li>
+            <li><a href="privacy-notice.html">Privacy Notice</a></li>
+            <li><a href="https://registration.bocra.org.bw/" target="_blank">BOCRA Staff Mail</a></li>
+          </ul>
+        </div>
+        <div class="footer-col social-col">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/BOCRABW/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/bocra_bw" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bocra_bw" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://bw.linkedin.com/company/botswana-communications-regulatory-authority" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <div class="newsletter-signup mt-4">
+            <p>Subscribe to our newsletter</p>
+            <div class="input-group">
+              <input type="email" placeholder="Email Address">
+              <button><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container fb-inner">
+        <p>&copy; <span id="year">2026</span> Botswana Communications Regulatory Authority. All Rights Reserved.</p>
+        <p class="dev-link">Design & Development modernized for premium experience.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

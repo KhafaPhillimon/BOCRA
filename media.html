@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Center | BOCRA</title>
+  <meta name="description" content="Official BOCRA Media Center: Press releases, news, events, speeches, and photo gallery." />
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .media-hero {
+      background: linear-gradient(rgba(13, 44, 94, 0.85), rgba(13, 44, 94, 0.85)), url('bocra_media_event_1.png');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 0 140px;
+    }
+    
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .news-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+    }
+    .news-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    
+    .news-img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    .news-content {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .news-date {
+      font-size: 0.85rem;
+      color: var(--secondary-azure);
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .news-content h3 { font-size: 1.3rem; color: var(--primary-navy); margin-bottom: 15px; }
+    .news-content p { font-size: 0.95rem; color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+    
+    .tab-container { margin-top: 60px; }
+    .tab-nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+    .tab-btn {
+      padding: 10px 25px;
+      font-weight: 600;
+      color: var(--text-gray);
+      cursor: pointer;
+      border-radius: 30px;
+      transition: all 0.3s;
+      background: none;
+      border: none;
+    }
+    .tab-btn.active {
+      background: var(--primary-navy);
+      color: #fff;
+    }
+    
+    .tab-pane {
+      display: none;
+    }
+    .tab-pane.active {
+      display: block;
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .speeches-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .speeches-table th, .speeches-table td {
+      padding: 18px 25px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    .speeches-table th { background: var(--bg-light); color: var(--primary-navy); font-weight: 700; }
+    .speeches-table tr:last-child td { border-bottom: none; }
+    
+    .btn-download {
+      color: var(--secondary-azure);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      height: 200px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-overlay {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(13, 44, 94, 0.4);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: 0.3s; color: #fff; font-size: 1.5rem;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    
+    .hero-breadcrumb {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.75); }
+    .hero-breadcrumb a:hover { color: var(--accent-teal); }
+    .hero-breadcrumb span { color: var(--accent-teal); font-weight: 600; }
+    
+    @media (max-width: 768px) {
+      .media-hero { padding: 80px 0 100px; }
+      .news-grid { grid-template-columns: 1fr; gap: 20px; }
+      .tab-nav { flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
+      .tab-nav { flex-wrap: wrap; justify-content: flex-start; }
+      .tab-btn { padding: 8px 18px; font-size: 0.9rem; }
+      .speeches-table th, .speeches-table td { padding: 12px 15px; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Utility Bar -->
+  <div class="top-banner" id="top-banner">
+    <div class="container top-banner-content">
+      <div class="top-utility-stack">
+        <a href="https://registration.bocra.org.bw/" target="_blank" class="top-bar-link"><i class="fa-solid fa-laptop"></i> BOCRA Portal</a>
+        <a href="licensing.html" class="top-bar-link"><i class="fa-solid fa-file-signature"></i> Licensing</a>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search BOCRA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" />
+      </a>
+      <div class="nav-wrapper-outer">
+        <div class="nav-wrapper" id="nav-wrapper">
+          <nav class="main-nav" id="main-nav">
+            <ul class="nav-list">
+              <li class="has-dropdown">
+                <a href="#">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="profile.html">Profile</a></li>
+                  <li><a href="ce-message.html">A Word From The Chief Executive</a></li>
+                  <li><a href="history.html">History Of Communication Regulation</a></li>
+                  <li><a href="organogram.html">Organogram</a></li>
+                  <li><a href="about.html#board">Board of Directors</a></li>
+                  <li><a href="executives.html">Executive Management</a></li>
+                  <li><a href="careers.html">Careers</a></li>
+                </ul>
+              </li>
+              <li class="has-dropdown">
+                <a href="#">Mandate <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="legislation.html">Legislation</a></li>
+                  <li><a href="telecommunications.html">Telecommunications</a></li>
+                  <li><a href="broadcasting.html">Broadcasting</a></li>
+                  <li><a href="postal.html">Postal</a></li>
+                  <li><a href="internet.html">Internet</a></li>
+                </ul>
+              </li>
+              <li><a href="projects.html">Projects</a></li>
+              <li class="has-dropdown">
+                <a href="#">Documents <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="draft-docs.html">Draft Documents And Legislation</a></li>
+                  <li><a href="https://www.bocra.org.bw/sites/default/files/2024-03/ICT%20Licensing%20Framework.pdf">ICT Licencing Framework</a></li>
+                  <li><a href="itu-workshop.html">ITU Capacity Building Workshop</a></li>
+                </ul>
+              </li>
+              <li><a href="complaints.html">Complaints</a></li>
+              <li><a href="media.html">Media</a></li>
+              <li><a href="tenders.html">Tenders</a></li>
+              <li><a href="https://registration.bocra.org.bw/" class="nav-highlight" target="_blank">ASMS-WebCP</a></li>
+            </ul>
+          </nav>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="inner-hero">
+    <div class="container">
+      <div class="hero-breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>Media Center</span>
+      </div>
+      <h1 class="fade-in-up">Media Center</h1>
+      <p class="fade-in-up delay-1">Learn about our latest news, events, and press releases.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-badge">Latest News</div>
+        <h2>News & Public Notices</h2>
+      </div>
+      
+      <div class="news-grid fade-in-up">
+        <div class="news-card">
+          <img src="executive_images/Martin_Mokgware.jpg" alt="Official Image 1" class="news-img" style="object-position: top;">
+          <div class="news-content">
+            <span class="news-date">Recent Event</span>
+            <h3>ITU Capacity Building Workshop</h3>
+            <p>Information regarding the ITU Capacity Building Workshop hosted by BOCRA to facilitate industry-wide development and collaboration.</p>
+            <a href="itu-workshop.html" class="btn-text" style="color: var(--secondary-azure); font-weight: 700;">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="news-card">
+          <img src="https://www.bocra.org.bw/sites/default/files/logo_1.png" alt="Official Logo" class="news-img" style="object-fit: contain; padding: 20px; background: #fafafa;">
+          <div class="news-content">
+            <span class="news-date">Public Notice</span>
+            <h3>Draft Documents & Legislation</h3>
+            <p>The revised draft framework documents and legislation concerning the allocation of resources for advancing communications in Botswana.</p>
+            <a href="draft-docs.html" class="btn-text" style="color: var(--secondary-azure); font-weight: 700;">View Official Documents <i class="fa-solid fa-file-lines"></i></a>
+          </div>
+        </div>
+        
+        <div class="news-card">
+          <img src="Bocra_final-logo-cropped.png" alt="News 3" class="news-img" style="object-fit: contain; padding: 20px; background: #fafafa;">
+          <div class="news-content">
+            <span class="news-date">Framework Update</span>
+            <h3>ICT Licencing Framework</h3>
+            <p>BOCRA's comprehensive framework concerning the licensing requirements, types, and procedures for Information and Communications Technology providers.</p>
+            <a href="licensing-framework.html" class="btn-text" style="color: var(--secondary-azure); font-weight: 700;">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-container">
+        <div class="tab-nav">
+          <button class="tab-btn active" data-target="speeches">Speeches</button>
+          <button class="tab-btn" data-target="gallery">Gallery</button>
+          <button class="tab-btn" data-target="videos">Videos</button>
+        </div>
+        
+        <div id="speeches" class="tab-pane active">
+          <div style="overflow-x: auto; width: 100%; border-radius: 12px; box-shadow: var(--shadow-sm);">
+            <table class="speeches-table" style="box-shadow: none; min-width: 600px;">
+              <thead>
+                <tr>
+                  <th>Title of Document / Notice</th>
+                  <th>Category</th>
+                  <th>Format</th>
+                  <th>Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Enforcement Guidelines - 2nd Draft</td>
+                  <td>Policy & Regulation</td>
+                  <td><i class="fa-solid fa-file-pdf" style="color: #e11d48;"></i> PDF</td>
+                  <td><a href="https://www.bocra.org.bw/sites/default/files/home%20page%20documents/ENFORCEMENT%20GUIDELINES%20-%202nd%20draft%28amended%29%20%282%29_0.pdf" target="_blank" class="btn-download">Download <i class="fa-solid fa-download"></i></a></td>
+                </tr>
+                <tr>
+                  <td>NBB Audience Survey Report Volume I</td>
+                  <td>Research & Reports</td>
+                  <td><i class="fa-solid fa-file-pdf" style="color: #e11d48;"></i> PDF</td>
+                  <td><a href="https://www.bocra.org.bw/sites/default/files/NBB_Audience_Survey_Report_Volume_I.pdf" target="_blank" class="btn-download">Download <i class="fa-solid fa-download"></i></a></td>
+                </tr>
+                <tr>
+                  <td>Mobile Network Coverage Report 2024</td>
+                  <td>Network Integrity</td>
+                  <td><i class="fa-solid fa-file-pdf" style="color: #e11d48;"></i> PDF</td>
+                  <td><a href="https://www.bocra.org.bw/sites/default/files/Mobile_Netowrk_Coverage.pdf" target="_blank" class="btn-download">Download <i class="fa-solid fa-download"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+  
+        <div id="gallery" class="tab-pane">
+           <div class="gallery-grid">
+              <div class="gallery-item"><img src="executive_images/Martin_Mokgware.jpg" style="object-position: top;" alt="Gallery 1"><div class="gallery-overlay"><i class="fa-solid fa-plus"></i></div></div>
+              <div class="gallery-item"><img src="board_images/Mr._Moabi_Pusumane_-_Vice_Chairperson.jpg" style="object-position: top;" alt="Gallery 2"><div class="gallery-overlay"><i class="fa-solid fa-plus"></i></div></div>
+              <div class="gallery-item"><img src="Bocra_final-logo-cropped.png" style="object-fit: contain; padding: 20px; background: #fafafa;" alt="Gallery 3"><div class="gallery-overlay"><i class="fa-solid fa-plus"></i></div></div>
+              <div class="gallery-item"><img src="https://www.bocra.org.bw/sites/default/files/logo_1.png" style="object-fit: contain; padding: 20px; background: #fafafa;" alt="Gallery 4"><div class="gallery-overlay"><i class="fa-solid fa-plus"></i></div></div>
+           </div>
+        </div>
+
+        <div id="videos" class="tab-pane">
+           <div class="text-center p-5">
+              <i class="fa-solid fa-video-slash fa-3x mb-3" style="color:#ccc;"></i>
+              <h3>No Videos Available</h3>
+              <p>Check back later for our latest event recordings.</p>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+<footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <div class="footer-logo-box">
+            <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" class="footer-logo">
+          </div>
+          <p class="mt-4"><strong>Botswana Communications Regulatory Authority</strong></p>
+          <p><i class="fa-solid fa-location-dot"></i> Plot 50671 Independence Avenue, Gaborone</p>
+          <p><i class="fa-solid fa-phone"></i> +267 395 7755</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@bocra.org.bw">info@bocra.org.bw</a></p>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About BOCRA</a></li>
+            <li><a href="legislation.html">Mandate & Regulation</a></li>
+            <li><a href="licensing.html">Licensing</a></li>
+            <li><a href="media.html">Media Center</a></li>
+            <li><a href="tenders.html">Tenders</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="tariffs.html">Tariffs</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="important-links.html">Important Links</a></li>
+            <li><a href="privacy-notice.html">Privacy Notice</a></li>
+            <li><a href="https://registration.bocra.org.bw/" target="_blank">BOCRA Staff Mail</a></li>
+          </ul>
+        </div>
+        <div class="footer-col social-col">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/BOCRABW/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/bocra_bw" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bocra_bw" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://bw.linkedin.com/company/botswana-communications-regulatory-authority" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <div class="newsletter-signup mt-4">
+            <p>Subscribe to our newsletter</p>
+            <div class="input-group">
+              <input type="email" placeholder="Email Address">
+              <button><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container fb-inner">
+        <p>&copy; <span id="year">2026</span> Botswana Communications Regulatory Authority. All Rights Reserved.</p>
+        <p class="dev-link">Design & Development modernized for premium experience.</p>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

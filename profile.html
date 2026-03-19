@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | Botswana Communications Regulatory Authority</title>
+  <meta name="description" content="Learn about BOCRA's mission, vision, values and core business as Botswana's premier communications regulatory authority." />
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ---- Profile Page Styles ---- */
+    .profile-hero-section {
+      background: var(--gradient-dark);
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .profile-hero-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0,169,165,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .profile-hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(7,121,191,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .profile-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .profile-hero-section h1 {
+      color: #fff;
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    .profile-hero-section p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.2rem;
+      max-width: 650px;
+    }
+    .hero-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.75); }
+    .hero-breadcrumb a:hover { color: var(--accent-teal); }
+    .hero-breadcrumb span { color: var(--accent-teal); font-weight: 600; }
+
+    /* Intro Block */
+    .intro-block {
+      background: #fff;
+      border-radius: var(--border-radius-lg);
+      padding: 50px;
+      box-shadow: var(--shadow-lg);
+      margin-top: -50px;
+      position: relative;
+      z-index: 10;
+      border-left: 6px solid var(--accent-teal);
+    }
+    .intro-block p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text-gray);
+    }
+    .intro-block p strong { color: var(--primary-navy); }
+
+    /* MVV Grid */
+    .mvv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+    .mvv-card {
+      background: #fff;
+      border-radius: var(--border-radius-lg);
+      padding: 40px 30px;
+      box-shadow: var(--shadow-md);
+      border-top: 4px solid transparent;
+      transition: var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+    }
+    .mvv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--gradient-dark);
+      opacity: 0;
+      transition: var(--transition-normal);
+    }
+    .mvv-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .mvv-card:hover::before { opacity: 1; }
+    .mvv-card-mission { border-top-color: var(--primary-navy); }
+    .mvv-card-vision  { border-top-color: var(--secondary-azure); }
+    .mvv-card-values  { border-top-color: var(--accent-teal); }
+    .mvv-icon {
+      width: 66px; height: 66px;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 22px;
+    }
+    .mvv-icon-mission { background: rgba(13,44,94,0.1); color: var(--primary-navy); }
+    .mvv-icon-vision  { background: rgba(7,121,191,0.1); color: var(--secondary-azure); }
+    .mvv-icon-values  { background: rgba(0,169,165,0.1); color: var(--accent-teal); }
+    .mvv-card h3 { font-size: 1.4rem; margin-bottom: 14px; color: var(--primary-navy); }
+    .mvv-card p  { color: var(--text-gray); line-height: 1.8; }
+
+    /* Values List */
+    .values-list { list-style: none; padding: 0; margin: 0; }
+    .values-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      display: flex; gap: 12px; align-items: flex-start;
+      color: var(--text-gray); font-size: 0.95rem;
+    }
+    .values-list li:last-child { border-bottom: none; }
+    .values-list li i { color: var(--accent-teal); margin-top: 3px; flex-shrink: 0; }
+    .values-list li strong { color: var(--primary-navy); }
+
+    /* Core Business */
+    .core-section {
+      background: var(--bg-light);
+      border-radius: var(--border-radius-lg);
+      padding: 60px 50px;
+      margin-top: 60px;
+    }
+    .core-section h2 {
+      font-size: 2.2rem;
+      color: var(--primary-navy);
+      margin-bottom: 20px;
+    }
+    .core-section > p {
+      font-size: 1.1rem;
+      color: var(--text-gray);
+      line-height: 1.9;
+      max-width: 900px;
+      margin-bottom: 40px;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .pillar-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      padding: 30px 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: var(--transition-normal);
+      border-left: 4px solid var(--secondary-azure);
+    }
+    .pillar-card:hover {
+      transform: translateX(6px);
+      box-shadow: var(--shadow-md);
+      border-left-color: var(--accent-teal);
+    }
+    .pillar-num {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--gradient-dark);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .pillar-text h4 { color: var(--primary-navy); margin-bottom: 6px; font-size: 1.05rem; }
+    .pillar-text p  { color: var(--text-gray); font-size: 0.9rem; line-height: 1.6; margin: 0; }
+
+    /* CTA strip */
+    .cta-strip {
+      background: var(--gradient-dark);
+      border-radius: var(--border-radius-lg);
+      padding: 50px;
+      margin-top: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .cta-strip h3 { color: #fff; font-size: 1.8rem; margin-bottom: 10px; }
+    .cta-strip p  { color: rgba(255,255,255,0.8); font-size: 1rem; }
+    .cta-strip .btn { flex-shrink: 0; }
+
+    @media (max-width: 768px) {
+      .profile-hero-section h1 { font-size: 2.2rem; }
+      .intro-block { padding: 30px 20px; }
+      .core-section { padding: 40px 20px; }
+      .cta-strip { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Utility Bar -->
+  <div class="top-banner" id="top-banner">
+    <div class="container top-banner-content">
+      <div class="top-utility-stack">
+        <a href="https://registration.bocra.org.bw/" target="_blank" class="top-bar-link"><i class="fa-solid fa-laptop"></i> BOCRA Portal</a>
+        <a href="licensing.html" class="top-bar-link"><i class="fa-solid fa-file-signature"></i> Licensing</a>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search BOCRA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" />
+      </a>
+      <div class="nav-wrapper-outer">
+        <div class="nav-wrapper" id="nav-wrapper">
+          <nav class="main-nav" id="main-nav">
+            <ul class="nav-list">
+              <li class="has-dropdown">
+                <a href="#">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="profile.html">Profile</a></li>
+                  <li><a href="ce-message.html">A Word From The Chief Executive</a></li>
+                  <li><a href="history.html">History Of Communication Regulation</a></li>
+                  <li><a href="organogram.html">Organogram</a></li>
+                  <li><a href="about.html#board">Board of Directors</a></li>
+                  <li><a href="executives.html">Executive Management</a></li>
+                  <li><a href="careers.html">Careers</a></li>
+                </ul>
+              </li>
+              <li class="has-dropdown">
+                <a href="#">Mandate <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="legislation.html">Legislation</a></li>
+                  <li><a href="telecommunications.html">Telecommunications</a></li>
+                  <li><a href="broadcasting.html">Broadcasting</a></li>
+                  <li><a href="postal.html">Postal</a></li>
+                  <li><a href="internet.html">Internet</a></li>
+                </ul>
+              </li>
+              <li><a href="projects.html">Projects</a></li>
+              <li class="has-dropdown">
+                <a href="#">Documents <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="draft-docs.html">Draft Documents And Legislation</a></li>
+                  <li><a href="https://www.bocra.org.bw/sites/default/files/2024-03/ICT%20Licensing%20Framework.pdf">ICT Licencing Framework</a></li>
+                  <li><a href="itu-workshop.html">ITU Capacity Building Workshop</a></li>
+                </ul>
+              </li>
+              <li><a href="complaints.html">Complaints</a></li>
+              <li><a href="media.html">Media</a></li>
+              <li><a href="tenders.html">Tenders</a></li>
+              <li><a href="https://registration.bocra.org.bw/" class="nav-highlight" target="_blank">ASMS-WebCP</a></li>
+            </ul>
+          </nav>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="inner-hero">
+    <div class="container">
+      <div class="hero-breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>About</span>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>Profile</span>
+      </div>
+      <h1 class="fade-in-up">Profile</h1>
+      <p class="fade-in-up delay-1">Learn about our mission, vision, values and core business as Botswana's premier communications regulatory authority.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <section class="section pt-0">
+      <div class="container">
+
+        <!-- Intro -->
+        <div class="intro-block slide-in-bottom">
+          <p>
+            <strong>Botswana Communications Regulatory Authority (BOCRA)</strong> was established through the 
+            Communications Regulatory Authority Act, 2012 (CRA Act) on the <strong>1st of April 2013</strong> 
+            to regulate the communications sector in Botswana, comprising telecommunications, Internet and 
+            Information and Communications Technologies (ICTs), radio communications, broadcasting, postal 
+            services and related matters.
+          </p>
+          <p style="margin-top:18px;">
+            The CRA Act replaced the Broadcasting Act [Cap 72:04], the Telecommunications Act [Cap 72:03], 
+            and caused the amendment of the Postal Services Act to create a <strong>converged or integrated 
+            regulatory authority</strong> for the communications industry.
+          </p>
+        </div>
+
+        <!-- Mission, Vision, Values -->
+        <div class="mvv-grid">
+
+          <!-- Mission -->
+          <div class="mvv-card mvv-card-mission slide-in-bottom">
+            <div class="mvv-icon mvv-icon-mission"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>Mission</h3>
+            <p>To regulate the Communications sector for the promotion of <strong>competition, innovation, consumer protection</strong> and universal access.</p>
+          </div>
+
+          <!-- Vision -->
+          <div class="mvv-card mvv-card-vision slide-in-bottom delay-1">
+            <div class="mvv-icon mvv-icon-vision"><i class="fa-solid fa-eye"></i></div>
+            <h3>Vision</h3>
+            <p>A <strong>Connected and Digitally Driven Society.</strong></p>
+          </div>
+
+          <!-- Values -->
+          <div class="mvv-card mvv-card-values slide-in-bottom delay-2">
+            <div class="mvv-icon mvv-icon-values"><i class="fa-solid fa-gem"></i></div>
+            <h3>Values</h3>
+            <ul class="values-list">
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <span><strong>Excellence</strong> – We strive to be the world-class leader in regulatory services.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <span><strong>Proactiveness</strong> – We are forward-looking in the delivery of our mandate.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <span><strong>Integrity</strong> – We demonstrate openness, honesty and accountability.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <span><strong>People</strong> – Our people are key to driving our success.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Core Business -->
+        <div class="core-section slide-in-bottom">
+          <div class="section-badge">Strategic Focus</div>
+          <h2>Core Business</h2>
+          <p>
+            BOCRA will take the lead in areas that drive the advancement of the communications sector with 
+            the ultimate goal to drive the development of and enable universal access to enhanced services, 
+            economic opportunities, employment creation and sustainable growth necessary for the achievement 
+            of a Digitally Connected Society. To achieve this goal, BOCRA pursues <strong>six key strategic pillars</strong>:
+          </p>
+
+          <div class="pillars-grid">
+            <div class="pillar-card">
+              <div class="pillar-num">1</div>
+              <div class="pillar-text">
+                <h4>Competition</h4>
+                <p>Fostering a competitive market environment that drives innovation and better services for consumers.</p>
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-num">2</div>
+              <div class="pillar-text">
+                <h4>Universal Access &amp; Service</h4>
+                <p>Ensuring communications services are accessible to all citizens across Botswana.</p>
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-num">3</div>
+              <div class="pillar-text">
+                <h4>Consumer Protection</h4>
+                <p>Safeguarding the rights and interests of all communications service users.</p>
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-num">4</div>
+              <div class="pillar-text">
+                <h4>Resource Optimisation</h4>
+                <p>Efficiently managing Botswana's frequency spectrum and communications resources.</p>
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-num">5</div>
+              <div class="pillar-text">
+                <h4>Talent Management</h4>
+                <p>Developing and retaining a skilled workforce to deliver regulatory excellence.</p>
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-num">6</div>
+              <div class="pillar-text">
+                <h4>Stakeholder Engagement</h4>
+                <p>Building strong relationships with industry, government and the public.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Strip -->
+        <div class="cta-strip">
+          <div>
+            <h3>Ready to Learn More?</h3>
+            <p>Explore BOCRA's history, leadership, and role in shaping Botswana's digital future.</p>
+          </div>
+          <div style="display:flex;gap:15px;flex-wrap:wrap;">
+            <a href="history.html" class="btn btn-outline">Our History</a>
+            <a href="about.html#board" class="btn btn-secondary">Meet the Board</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+                    <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <div class="footer-logo-box">
+            <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" class="footer-logo">
+          </div>
+          <p class="mt-4"><strong>Botswana Communications Regulatory Authority</strong></p>
+          <p><i class="fa-solid fa-location-dot"></i> Plot 50671 Independence Avenue, Gaborone</p>
+          <p><i class="fa-solid fa-phone"></i> +267 395 7755</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@bocra.org.bw">info@bocra.org.bw</a></p>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About BOCRA</a></li>
+            <li><a href="legislation.html">Mandate & Regulation</a></li>
+            <li><a href="licensing.html">Licensing</a></li>
+            <li><a href="media.html">Media Center</a></li>
+            <li><a href="tenders.html">Tenders</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="tariffs.html">Tariffs</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="important-links.html">Important Links</a></li>
+            <li><a href="privacy-notice.html">Privacy Notice</a></li>
+            <li><a href="https://registration.bocra.org.bw/" target="_blank">BOCRA Staff Mail</a></li>
+          </ul>
+        </div>
+        <div class="footer-col social-col">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/BOCRABW/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/bocra_bw" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bocra_bw" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://bw.linkedin.com/company/botswana-communications-regulatory-authority" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <div class="newsletter-signup mt-4">
+            <p>Subscribe to our newsletter</p>
+            <div class="input-group">
+              <input type="email" placeholder="Email Address">
+              <button><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container fb-inner">
+        <p>&copy; <span id="year">2026</span> Botswana Communications Regulatory Authority. All Rights Reserved.</p>
+        <p class="dev-link">Design & Development modernized for premium experience.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tenders Portal | BOCRA</title>
+  <meta name="description" content="View active tenders, notice of awards, and procurement guidelines for the Botswana Communications Regulatory Authority." />
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .tenders-hero {
+      background: var(--gradient-dark);
+      padding: 100px 0 140px;
+      position: relative;
+    }
+    .tender-badge {
+      background: rgba(0, 169, 165, 0.2);
+      color: var(--accent-teal);
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      border: 1px solid rgba(0, 169, 165, 0.3);
+    }
+    .hero-breadcrumb {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.75); }
+    .hero-breadcrumb a:hover { color: var(--accent-teal); }
+    .hero-breadcrumb span { color: var(--accent-teal); font-weight: 600; }
+    
+    .tender-table {
+      width: 100%;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      margin-top: -80px;
+      position: relative;
+      z-index: 10;
+    }
+    .tender-table th, .tender-table td {
+      padding: 22px 30px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    .tender-table th { background: #f8fafc; color: var(--primary-navy); font-weight: 700; border-bottom: 2px solid #eee; }
+    
+    .status-badge {
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .status-active { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+    .status-closed { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+    
+    .guidelines-section { padding: 100px 0; }
+    .guidelines-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    .guide-card {
+      background: #fff;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--secondary-azure);
+      transition: var(--transition-normal);
+    }
+    .guide-card:hover { transform: translateX(10px); box-shadow: var(--shadow-md); }
+    .guide-card h3 { color: var(--primary-navy); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+    .guide-card i { color: var(--secondary-azure); }
+    
+    .cta-box {
+      background: var(--gradient-dark);
+      padding: 60px;
+      border-radius: 24px;
+      color: #fff;
+      text-align: center;
+      margin-top: 60px;
+    }
+    @media (max-width: 768px) {
+      .tender-table th, .tender-table td { padding: 12px 15px; font-size: 0.85rem; }
+      .tenders-hero { padding: 80px 0 100px; }
+      .tenders-hero h1 { font-size: 2.2rem !important; }
+      .cta-box { padding: 30px 20px; }
+      .cta-box .d-flex { flex-direction: column !important; width: 100%; gap: 15px; }
+      .cta-box .d-flex a { width: 100%; justify-content: center; }
+      .guide-card { padding: 25px 20px; }
+      .tender-table { margin-top: -40px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Utility Bar -->
+  <div class="top-banner" id="top-banner">
+    <div class="container top-banner-content">
+      <div class="top-utility-stack">
+        <a href="https://registration.bocra.org.bw/" target="_blank" class="top-bar-link"><i class="fa-solid fa-laptop"></i> BOCRA Portal</a>
+        <a href="licensing.html" class="top-bar-link"><i class="fa-solid fa-file-signature"></i> Licensing</a>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search BOCRA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" />
+      </a>
+      <div class="nav-wrapper-outer">
+        <div class="nav-wrapper" id="nav-wrapper">
+          <nav class="main-nav" id="main-nav">
+            <ul class="nav-list">
+              <li class="has-dropdown">
+                <a href="#">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="profile.html">Profile</a></li>
+                  <li><a href="ce-message.html">A Word From The Chief Executive</a></li>
+                  <li><a href="history.html">History Of Communication Regulation</a></li>
+                  <li><a href="organogram.html">Organogram</a></li>
+                  <li><a href="about.html#board">Board of Directors</a></li>
+                  <li><a href="executives.html">Executive Management</a></li>
+                  <li><a href="careers.html">Careers</a></li>
+                </ul>
+              </li>
+              <li class="has-dropdown">
+                <a href="#">Mandate <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="legislation.html">Legislation</a></li>
+                  <li><a href="telecommunications.html">Telecommunications</a></li>
+                  <li><a href="broadcasting.html">Broadcasting</a></li>
+                  <li><a href="postal.html">Postal</a></li>
+                  <li><a href="internet.html">Internet</a></li>
+                </ul>
+              </li>
+              <li><a href="projects.html">Projects</a></li>
+              <li class="has-dropdown">
+                <a href="#">Documents <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="draft-docs.html">Draft Documents And Legislation</a></li>
+                  <li><a href="https://www.bocra.org.bw/sites/default/files/2024-03/ICT%20Licensing%20Framework.pdf">ICT Licencing Framework</a></li>
+                  <li><a href="itu-workshop.html">ITU Capacity Building Workshop</a></li>
+                </ul>
+              </li>
+              <li><a href="complaints.html">Complaints</a></li>
+              <li><a href="media.html">Media</a></li>
+              <li><a href="tenders.html">Tenders</a></li>
+              <li><a href="https://registration.bocra.org.bw/" class="nav-highlight" target="_blank">ASMS-WebCP</a></li>
+            </ul>
+          </nav>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="inner-hero">
+    <div class="container">
+      <div class="hero-breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>Tenders</span>
+      </div>
+      <h1 class="fade-in-up">Tenders Portal</h1>
+      <p class="fade-in-up delay-1">View active tenders, notice of awards, and procurement guidelines for BOCRA.</p>
+    </div>
+  </section>
+
+  <section class="section fade-in-up">
+    <div class="container">
+      <div style="overflow-x: auto; width: 100%; border-radius: 16px; margin-top: -80px; position: relative; z-index: 10; padding-bottom: 10px;">
+        <table class="tender-table" style="margin-top: 0; white-space: nowrap;">
+          <thead>
+            <tr>
+              <th>Tender Reference</th>
+              <th>Description of Works/Services</th>
+              <th>Closing Date</th>
+              <th>Status</th>
+              <th>Dossier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>BOCRA/PROC/2024/01</strong></td>
+              <td style="white-space: normal;">Notice of Adjudication Decision - Supply and Installation of Solar Photovoltaic Panel System at BOCRA Head Office and Phakalane Spectrum House</td>
+              <td>12 March 2024</td>
+              <td><span class="status-badge status-closed" style="background: rgba(59,130,246,0.1); color: #3b82f6;">Awarded</span></td>
+              <td><a href="https://www.bocra.org.bw/sites/default/files/tenders/Notice_of_Adjudication_Decision%5B84%5D.docx_.pdf" target="_blank" style="color:var(--secondary-azure); font-weight:700;"><i class="fa-solid fa-download"></i> PDF File</a></td>
+            </tr>
+            <tr>
+              <td><strong>BOCRA/PROC/2024/02</strong></td>
+              <td style="white-space: normal;">Consultancy Services for the Development of Cost Models and Pricing Framework for ICT Services</td>
+              <td>28 April 2024</td>
+              <td><span class="status-badge status-active">Active</span></td>
+              <td><a href="https://www.bocra.org.bw/tenders" target="_blank" style="color:var(--secondary-azure); font-weight:700;"><i class="fa-solid fa-link"></i> View ITT</a></td>
+            </tr>
+            <tr>
+              <td><strong>BOCRA/PROC/2023/12</strong></td>
+              <td style="white-space: normal;">Review of Type Approval Technical Standards & Procedures and Development of Broadcasting Technical Standards</td>
+              <td>15 Jan 2024</td>
+              <td><span class="status-badge status-closed">Closed</span></td>
+              <td><a href="https://www.bocra.org.bw/tenders" target="_blank" style="color:#999;"><i class="fa-solid fa-lock"></i> Locked</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="guidelines-section bg-light">
+    <div class="container">
+      <div class="section-header text-center fade-in-up">
+        <div class="section-badge">Guidelines</div>
+        <h2>Procurement Standards</h2>
+        <p>BOCRA ensures transparency and fairness in all its procurement processes.</p>
+      </div>
+      
+      <div class="guidelines-grid">
+        <div class="guide-card fade-in-up">
+          <h3><i class="fa-solid fa-file-contract"></i> Tender Submission</h3>
+          <p>Tenders must be submitted in the format specified in the tender document. Late submissions will not be accepted under any circumstances.</p>
+        </div>
+        <div class="guide-card fade-in-up delay-1">
+          <h3><i class="fa-solid fa-handshake"></i> Supplier Registration</h3>
+          <p>Vendors wishing to do business with BOCRA must be registered on our Supplier Database. Applications are reviewed quarterly.</p>
+        </div>
+        <div class="guide-card fade-in-up delay-2">
+          <h3><i class="fa-solid fa-gavel"></i> Adjudication</h3>
+          <p>All bids are evaluated by the Tender Committee based on technical compliance, financial proposal, and PPADB requirements.</p>
+        </div>
+      </div>
+      
+      <div class="cta-box fade-in-up">
+        <h2>Become a Registered Supplier</h2>
+        <p class="mt-3 mb-4">Download the registration forms and join our pool of providers for future opportunities.</p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#" class="btn-primary">Download Forms <i class="fa-solid fa-download"></i></a>
+          <a href="mailto:procurement@bocra.org.bw" class="btn-secondary" style="background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.3);">Contact Procurement</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <div class="footer-logo-box">
+            <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" class="footer-logo">
+          </div>
+          <p class="mt-4"><strong>Botswana Communications Regulatory Authority</strong></p>
+          <p><i class="fa-solid fa-location-dot"></i> Plot 50671 Independence Avenue, Gaborone</p>
+          <p><i class="fa-solid fa-phone"></i> +267 395 7755</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@bocra.org.bw">info@bocra.org.bw</a></p>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About BOCRA</a></li>
+            <li><a href="legislation.html">Mandate & Regulation</a></li>
+            <li><a href="licensing.html">Licensing</a></li>
+            <li><a href="media.html">Media Center</a></li>
+            <li><a href="tenders.html">Tenders</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="tariffs.html">Tariffs</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="important-links.html">Important Links</a></li>
+            <li><a href="privacy-notice.html">Privacy Notice</a></li>
+            <li><a href="https://registration.bocra.org.bw/" target="_blank">BOCRA Staff Mail</a></li>
+          </ul>
+        </div>
+        <div class="footer-col social-col">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/BOCRABW/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/bocra_bw" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bocra_bw" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://bw.linkedin.com/company/botswana-communications-regulatory-authority" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <div class="newsletter-signup mt-4">
+            <p>Subscribe to our newsletter</p>
+            <div class="input-group">
+              <input type="email" placeholder="Email Address">
+              <button><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container fb-inner">
+        <p>&copy; <span id="year">2026</span> Botswana Communications Regulatory Authority. All Rights Reserved.</p>
+        <p class="dev-link">Design & Development modernized for premium experience.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

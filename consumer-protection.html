@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consumer Protection & Education | BOCRA</title>
+  <meta name="description" content="Learn about your rights and responsibilities as a consumer of communications services in Botswana." />
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .cp-hero {
+      background: linear-gradient(rgba(0, 169, 165, 0.85), rgba(0, 169, 165, 0.85)), url('bocra_consumer_protection_education.png');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 0 140px;
+    }
+    
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .right-card {
+      background: #f8fafc;
+      padding: 40px;
+      border-radius: 20px;
+      transition: var(--transition-normal);
+      border-left: 6px solid var(--accent-teal);
+    }
+    .right-card:hover { transform: scale(1.02); background: #fff; box-shadow: var(--shadow-lg); }
+    .right-card h3 { color: var(--primary-navy); margin-bottom: 20px; font-weight: 800; }
+    .right-card ul { list-style: none; padding: 0; }
+    .right-card ul li { position: relative; padding-left: 25px; margin-bottom: 12px; line-height: 1.5; color: var(--text-gray); }
+    .right-card ul li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; color: var(--accent-teal); }
+    
+    .advice-section { padding: 100px 0; }
+    .advice-box {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .advice-img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .advice-content { padding: 60px; }
+    
+    .tip-item {
+      display: flex; gap: 20px; margin-bottom: 30px;
+    }
+    .tip-icon { font-size: 1.5rem; color: var(--secondary-azure); }
+    
+    @media (max-width: 992px) {
+      .advice-box { grid-template-columns: 1fr; }
+      .advice-img { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+    <!-- Top Utility Bar -->
+  <div class="top-banner" id="top-banner">
+    <div class="container top-banner-content">
+      <div class="top-utility-stack">
+        <a href="https://registration.bocra.org.bw/" target="_blank" class="top-bar-link"><i class="fa-solid fa-laptop"></i> BOCRA Portal</a>
+        <a href="licensing.html" class="top-bar-link"><i class="fa-solid fa-file-signature"></i> Licensing</a>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search BOCRA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" />
+      </a>
+      <div class="nav-wrapper-outer">
+        <div class="nav-wrapper">
+          <nav class="main-nav" id="main-nav">
+            <ul class="nav-list">
+              <li class="has-dropdown">
+                <a href="#">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="profile.html">Profile</a></li>
+                  <li><a href="ce-message.html">A Word From The Chief Executive</a></li>
+                  <li><a href="history.html">History Of Communication Regulation</a></li>
+                  <li><a href="organogram.html">Organogram</a></li>
+                  <li><a href="about.html#board">Board of Directors</a></li>
+                  <li><a href="executives.html">Executive Management</a></li>
+                  <li><a href="careers.html">Careers</a></li>
+                </ul>
+              </li>
+              <li class="has-dropdown">
+                <a href="#">Mandate <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="legislation.html">Legislation</a></li>
+                  <li><a href="telecommunications.html">Telecommunications</a></li>
+                  <li><a href="broadcasting.html">Broadcasting</a></li>
+                  <li><a href="postal.html">Postal</a></li>
+                  <li><a href="internet.html">Internet</a></li>
+                </ul>
+              </li>
+              <li id="nav-projects"><a href="projects.html">Projects</a></li>
+              <li class="has-dropdown">
+                <a href="#">Documents <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="draft-docs.html">Draft Documents And Legislation</a></li>
+                  <li><a href="https://www.bocra.org.bw/sites/default/files/2024-03/ICT%20Licensing%20Framework.pdf">ICT Licencing Framework</a></li>
+                  <li><a href="itu-workshop.html">ITU Capacity Building Workshop</a></li>
+                </ul>
+              </li>
+              <li id="nav-complaints"><a href="complaints.html">Complaints</a></li>
+              <li id="nav-media"><a href="media.html">Media</a></li>
+              <li id="nav-tenders"><a href="tenders.html">Tenders</a></li>
+              <li><a href="https://registration.bocra.org.bw/" class="nav-highlight" target="_blank">ASMS-WebCP</a></li>
+            </ul>
+          </nav>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+                
+
+  <section class="cp-hero">
+    <div class="container text-center text-white">
+      <div class="hero-breadcrumb justify-content-center" style="display: flex; gap: 10px; color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+        <a href="index.html" style="color: #fff;">Home</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i> <span>Consumer Protection</span>
+      </div>
+      <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 20px;">Empowering Consumers</h1>
+      <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; opacity: 0.9;">Protecting your interests and ensuring quality communications for every Motswana.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-badge">Know Your Rights</div>
+        <h2>Consumer Rights & Responsibilities</h2>
+      </div>
+      
+      <div class="rights-grid">
+        <div class="right-card">
+          <h3>Your Rights</h3>
+          <ul>
+            <li>To receive clear information about services and tariffs.</li>
+            <li>To be protected from misleading or deceptive conduct.</li>
+            <li>To privacy and protection of personal data.</li>
+            <li>To timely and efficient dispute resolution.</li>
+            <li>To switch service providers without undue barriers.</li>
+          </ul>
+        </div>
+        <div class="right-card" style="border-left-color: var(--secondary-azure);">
+          <h3>Your Responsibilities</h3>
+          <ul>
+            <li>To pay for services consumed within agreed timelines.</li>
+            <li>To use communication services legally and ethically.</li>
+            <li>To protect your devices and account passwords.</li>
+            <li>To report faults or billing discrepancies immediately.</li>
+            <li>To follow the service provider's internal complaint process first.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="advice-section bg-light">
+    <div class="container">
+      <div class="advice-box">
+        <img src="bocra_consumer_protection_education.png" alt="Education" class="advice-img">
+        <div class="advice-content">
+          <div class="section-badge">Stay Informed</div>
+          <h2 class="mb-4">Consumer Advice & Tips</h2>
+          <div class="tip-item">
+            <div class="tip-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <h4 style="font-weight:700;">Protect Against Scams</h4>
+              <p>Be wary of unsolicited calls or messages asking for personal information or bank details. BOCRA and your provider will NEVER ask for your PIN via SMS.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon"><i class="fa-solid fa-chart-simple"></i></div>
+            <div>
+              <h4 style="font-weight:700;">Monitor Your Usage</h4>
+              <p>Check your data consumption regularly. Heavy background data usage on smartphones can lead to "missing airtime" complaints.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon"><i class="fa-solid fa-circle-info"></i></div>
+            <div>
+              <h4 style="font-weight:700;">Understand Tariffs</h4>
+              <p>Compare plans across providers. BOCRA publishes tariff comparisons periodically to help you make informed choices.</p>
+            </div>
+          </div>
+          <a href="complaints.html" class="btn-primary" style="margin-top:20px;">Lodge a Complaint <i class="fa-solid fa-paper-plane"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <div class="footer-logo-box">
+            <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" class="footer-logo">
+          </div>
+          <p class="mt-4"><strong>Botswana Communications Regulatory Authority</strong></p>
+          <p><i class="fa-solid fa-location-dot"></i> Plot 50671 Independence Avenue, Gaborone</p>
+          <p><i class="fa-solid fa-phone"></i> +267 395 7755</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@bocra.org.bw">info@bocra.org.bw</a></p>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About BOCRA</a></li>
+            <li><a href="legislation.html">Mandate & Regulation</a></li>
+            <li><a href="licensing.html">Licensing</a></li>
+            <li><a href="media.html">Media Center</a></li>
+            <li><a href="tenders.html">Tenders</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="tariffs.html">Tariffs</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="important-links.html">Important Links</a></li>
+            <li><a href="privacy-notice.html">Privacy Notice</a></li>
+            <li><a href="https://registration.bocra.org.bw/" target="_blank">BOCRA Staff Mail</a></li>
+          </ul>
+        </div>
+        <div class="footer-col social-col">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/BOCRABW/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/bocra_bw" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bocra_bw" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://bw.linkedin.com/company/botswana-communications-regulatory-authority" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <div class="newsletter-signup mt-4">
+            <p>Subscribe to our newsletter</p>
+            <div class="input-group">
+              <input type="email" placeholder="Email Address">
+              <button><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container fb-inner">
+        <p>&copy; <span id="year">2026</span> Botswana Communications Regulatory Authority. All Rights Reserved.</p>
+        <p class="dev-link">Design & Development modernized for premium experience.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

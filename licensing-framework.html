@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICT Licensing Framework | Botswana Communications Regulatory Authority</title>
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .licensing-hero {
+      background: var(--gradient-dark);
+      padding: 80px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+    .licensing-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%; right: -8%;
+      width: 550px; height: 550px;
+      background: radial-gradient(circle, rgba(0,169,165,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .licensing-hero-content { position: relative; z-index: 2; }
+    .licensing-hero h1 { color: #fff; font-size: 3.5rem; font-weight: 800; margin-bottom: 16px; }
+    .licensing-hero p  { color: rgba(255,255,255,0.82); font-size: 1.15rem; max-width: 600px; }
+    .hero-breadcrumb {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 20px;
+    }
+    .main-content { padding: 80px 0; background: #fff; }
+
+    .framework-desc {
+      background: #f8fafc;
+      padding: 40px;
+      border-radius: var(--border-radius);
+      margin-bottom: 50px;
+      border-left: 5px solid var(--accent-teal);
+    }
+    .framework-desc h2 { color: var(--primary-navy); margin-bottom: 15px; }
+    .framework-desc p { color: var(--text-gray); font-size: 1.1rem; line-height: 1.7; }
+
+    .licence-category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .licence-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 15px;
+      padding: 30px;
+      transition: var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .licence-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--secondary-azure);
+    }
+    .licence-card .icon-box {
+      width: 50px; height: 50px;
+      background: rgba(0, 169, 165, 0.1);
+      color: var(--accent-teal);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .licence-card h3 { color: var(--primary-navy); font-size: 1.25rem; }
+    .licence-card p { color: var(--text-gray); font-size: 0.95rem; line-height: 1.5; }
+    
+    .requirement-list {
+      margin-top: auto;
+      padding-top: 15px;
+      border-top: 1px solid #edf2f7;
+    }
+    .req-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--secondary-azure);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .req-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-banner" id="top-banner">
+    <div class="container top-banner-content">
+      <div class="top-utility-stack">
+        <a href="https://registration.bocra.org.bw/" target="_blank" class="top-bar-link"><i class="fa-solid fa-laptop"></i> BOCRA Portal</a>
+        <a href="licensing.html" class="top-bar-link"><i class="fa-solid fa-file-signature"></i> Licensing</a>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search BOCRA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" />
+      </a>
+      <div class="nav-wrapper-outer">
+        <div class="nav-wrapper">
+          <nav class="main-nav" id="main-nav">
+            <ul class="nav-list">
+              <li class="has-dropdown">
+                <a href="#">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="profile.html">Profile</a></li>
+                  <li><a href="ce-message.html">A Word From The Chief Executive</a></li>
+                  <li><a href="history.html">History Of Communication Regulation</a></li>
+                  <li><a href="organogram.html">Organogram</a></li>
+                  <li><a href="about.html#board">Board of Directors</a></li>
+                  <li><a href="executives.html">Executive Management</a></li>
+                  <li><a href="careers.html">Careers</a></li>
+                </ul>
+              </li>
+              <li class="has-dropdown">
+                <a href="#">Mandate <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="legislation.html">Legislation</a></li>
+                  <li><a href="telecommunications.html">Telecommunications</a></li>
+                  <li><a href="broadcasting.html">Broadcasting</a></li>
+                  <li><a href="postal.html">Postal</a></li>
+                  <li><a href="internet.html">Internet</a></li>
+                </ul>
+              </li>
+              <li id="nav-projects"><a href="projects.html">Projects</a></li>
+              <li class="has-dropdown">
+                <a href="#">Documents <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="draft-docs.html">Draft Documents And Legislation</a></li>
+                  <li><a href="https://www.bocra.org.bw/sites/default/files/2024-03/ICT%20Licensing%20Framework.pdf">ICT Licencing Framework</a></li>
+                  <li><a href="itu-workshop.html">ITU Capacity Building Workshop</a></li>
+                </ul>
+              </li>
+              <li id="nav-complaints"><a href="complaints.html">Complaints</a></li>
+              <li id="nav-media"><a href="media.html">Media</a></li>
+              <li id="nav-tenders"><a href="tenders.html">Tenders</a></li>
+              <li><a href="https://registration.bocra.org.bw/" class="nav-highlight" target="_blank">ASMS-WebCP</a></li>
+            </ul>
+          </nav>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="licensing-hero">
+    <div class="container licensing-hero-content">
+      <div class="hero-breadcrumb">
+        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>Documents</span> <i class="fa-solid fa-chevron-right" style="font-size:0.7rem"></i>
+        <span>ICT Licensing Framework</span>
+      </div>
+      <h1 class="fade-in-up">ICT Licensing Framework</h1>
+      <p class="fade-in-up delay-1">The converged licensing framework designed to foster competition, innovation, and high-quality services in Botswana's ICT sector.</p>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+      
+      <div class="framework-desc fade-in-up">
+        <h2>Overview of the Framework</h2>
+        <p>BOCRA implemented the new and converged ICT licensing framework in September 2015. The framework was meant to create a more conducive environment for ICT development, meeting the demand for real-time high quality and affordable services, and accommodating emerging players for increased competitiveness.</p>
+      </div>
+
+      <div class="licence-category-grid">
+        
+        <div class="licence-card fade-in-up">
+          <div class="icon-box"><i class="fa-solid fa-tower-broadcast"></i></div>
+          <h3>Network Facilities Provider (NFP)</h3>
+          <p>This licence category covers entities that own and operate communications infrastructure and facilities used for providing services.</p>
+          <div class="requirement-list">
+            <a href="https://www.bocra.org.bw/sites/default/files/documents/NFP_PROVISIONAL_LICENCE_APPLICATION_REQUIREMENTS.pdf" class="req-link" target="_blank"><i class="fa-regular fa-file-pdf"></i> Application Requirements</a>
+          </div>
+        </div>
+
+        <div class="licence-card fade-in-up delay-1">
+          <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Services and Applications Provider (SAP)</h3>
+          <p>This category is for entities that provide communications services and applications to end-users using the facilities of NFPs.</p>
+          <div class="requirement-list">
+            <a href="https://www.bocra.org.bw/sites/default/files/documents/SAP_PROVISIONAL_LICENCE_APPLICATION_REQUIREMENTS.pdf" class="req-link" target="_blank"><i class="fa-regular fa-file-pdf"></i> Application Requirements</a>
+          </div>
+        </div>
+
+        <div class="licence-card fade-in-up delay-2">
+          <div class="icon-box"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3>Commercial Postal Operator (CPO)</h3>
+          <p>Licensing for courier and value-added postal services operating on a commercial basis in Botswana.</p>
+          <div class="requirement-list">
+            <a href="https://www.bocra.org.bw/sites/default/files/documents/CPO_PROVISIONAL_LICENCE_APPLICATION_REQUIREMENTS.pdf" class="req-link" target="_blank"><i class="fa-regular fa-file-pdf"></i> Application Requirements</a>
+          </div>
+        </div>
+
+        <div class="licence-card fade-in-up">
+          <div class="icon-box"><i class="fa-solid fa-radio"></i></div>
+          <h3>Campus Radio Licensing</h3>
+          <p>Specific framework for radio broadcasting within university or college campuses for academic and community purposes.</p>
+          <div class="requirement-list">
+            <a href="https://www.bocra.org.bw/sites/default/files/documents/Campus%20Radio%20Licensing%20Framework.pdf" class="req-link" target="_blank"><i class="fa-regular fa-file-pdf"></i> Licensing Framework</a>
+            <a href="https://www.bocra.org.bw/sites/default/files/documents/APPLICATION%20REQUIREMENTS%20FOR%20CAMPUS%20RADIO%20LICENSING.pdf" class="req-link" target="_blank"><i class="fa-regular fa-file-pdf"></i> Application Requirements</a>
+          </div>
+        </div>
+
+        <div class="licence-card fade-in-up delay-1">
+          <div class="icon-box"><i class="fa-solid fa-list-check"></i></div>
+          <h3>General Requirements & Fees</h3>
+          <p>Overview of the application process, required documentation, and the applicable fee structure for all license types.</p>
+          <div class="requirement-list">
+            <a href="https://www.bocra.org.bw/sites/default/files/documents/ICT_LICENCE_APPLICATION_REQUIREMENTS_AND_FEES.pdf" class="req-link" target="_blank"><i class="fa-regular fa-file-pdf"></i> Fees & Requirements</a>
+            <a href="https://www.bocra.org.bw/sites/default/files/documents/LICENSED_OPERATORS.pdf" class="req-link" target="_blank"><i class="fa-solid fa-list"></i> List of Licensed Operators</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <div class="footer-logo-box">
+            <img src="Bocra_final-logo-cropped.png" alt="BOCRA Logo" class="footer-logo">
+          </div>
+          <p class="mt-4"><strong>Botswana Communications Regulatory Authority</strong></p>
+          <p><i class="fa-solid fa-location-dot"></i> Plot 50671 Independence Avenue, Gaborone</p>
+          <p><i class="fa-solid fa-phone"></i> +267 395 7755</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@bocra.org.bw">info@bocra.org.bw</a></p>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About BOCRA</a></li>
+            <li><a href="legislation.html">Mandate & Regulation</a></li>
+            <li><a href="licensing.html">Licensing</a></li>
+            <li><a href="media.html">Media Center</a></li>
+            <li><a href="tenders.html">Tenders</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col link-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="tariffs.html">Tariffs</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="important-links.html">Important Links</a></li>
+            <li><a href="privacy-notice.html">Privacy Notice</a></li>
+            <li><a href="https://registration.bocra.org.bw/" target="_blank">BOCRA Staff Mail</a></li>
+          </ul>
+        </div>
+        <div class="footer-col social-col">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/BOCRABW/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/bocra_bw" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bocra_bw" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://bw.linkedin.com/company/botswana-communications-regulatory-authority" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <div class="newsletter-signup mt-4">
+            <p>Subscribe to our newsletter</p>
+            <div class="input-group">
+              <input type="email" placeholder="Email Address">
+              <button><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container fb-inner">
+        <p>&copy; <span id="year">2026</span> Botswana Communications Regulatory Authority. All Rights Reserved.</p>
+        <p class="dev-link">Design & Development modernized for premium experience.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
