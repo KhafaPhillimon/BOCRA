@@ -3,167 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Licensing | BOCRA</title>
-  <meta name="description" content="Official licensing portal for communications services in Botswana: Unified, Spectrum, Broadcasting, and Type Approval." />
+  <title>Consumer Portal | BOCRA</title>
+  <meta name="description" content="BOCRA consumer portal for complaints, protection guidance, tariffs, FAQs, and contact support." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .licensing-hero {
-      background: linear-gradient(rgba(13, 44, 94, 0.9), rgba(13, 44, 94, 0.9)), url('bocra_licensing_compliance_seal.png');
-      background-size: cover;
-      background-position: center;
-      padding: 100px 0 140px;
-    }
-
-    .licensing-breadcrumb {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    .licensing-breadcrumb a {
-      color: #fff;
-    }
-
-    .licensing-hero-title {
-      font-size: 3.5rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-
-    .licensing-hero-summary {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      opacity: 0.9;
-      color: #fff;
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .category-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: var(--shadow-md);
-      transition: var(--transition-normal);
-      display: flex;
-      flex-direction: column;
-      border: 1px solid #eee;
-    }
-
-    .category-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-xl);
-      border-color: var(--secondary-azure);
-    }
-
-    .category-card i {
-      font-size: 2.5rem;
-      color: var(--secondary-azure);
-      margin-bottom: 25px;
-    }
-
-    .category-card h3 {
-      color: var(--primary-navy);
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-
-    .category-card p {
-      line-height: 1.6;
-      color: var(--text-gray);
-      margin-bottom: 25px;
-      flex-grow: 1;
-    }
-
-    .portal-section {
-      background: var(--gradient-dark);
-      padding: 100px 0;
-      color: #fff;
-      border-radius: 30px;
-      margin: 80px 0;
-      text-align: center;
-    }
-
-    .portal-section h2 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-
-    .portal-section p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      opacity: 0.8;
-      color: #fff;
-    }
-
-    .portal-action-button {
-      border: none;
-    }
-
-    .framework-link-box {
-      background: #fff;
-      border-radius: 16px;
-      padding: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      box-shadow: var(--shadow-sm);
-      margin-top: 40px;
-    }
-
-    .framework-link-box i {
-      color: var(--accent-teal);
-      font-size: 2rem;
-    }
-
-    .framework-details {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .framework-details h4 {
-      font-weight: 700;
-      color: var(--primary-navy);
-    }
-
-    .framework-details p {
-      color: var(--text-gray);
-      font-size: 0.9rem;
-      margin: 0;
-    }
-
-    @media (max-width: 768px) {
-      .licensing-hero-title {
-        font-size: 2.5rem;
-      }
-
-      .framework-link-box,
-      .framework-details {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="top-banner" id="top-banner">
@@ -234,77 +80,89 @@
     </div>
   </header>
 
-  <section class="licensing-hero">
-    <div class="container text-center text-white">
-      <div class="licensing-breadcrumb">
-        <a href="index.html">Home</a>
-        <i class="fa-solid fa-chevron-right"></i>
-        <span>Licensing</span>
+  <section class="portal-hero portal-hero--consumer">
+    <div class="container">
+      <div class="section-header">
+        <div class="portal-kicker"><i class="fa-solid fa-users"></i> BOCRA Consumer Portal</div>
+        <h1>One place for consumer support and protection</h1>
+        <p>Move easily between consumer protection guidance, complaints, tariffs, equipment checks, privacy information, and BOCRA contact routes through a simple public portal.</p>
       </div>
-      <h1 class="licensing-hero-title">Regulatory Licensing</h1>
-      <p class="licensing-hero-summary">Secure regulatory permission to operate communications services in the Botswana market.</p>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section bg-light">
     <div class="container">
-      <div class="section-header text-center">
-        <div class="section-badge">Categories</div>
-        <h2>Licensing Portfolios</h2>
-      </div>
-
-      <div class="category-grid">
-        <div class="category-card">
-          <i class="fa-solid fa-tower-cell"></i>
-          <h3>Unified Licensing</h3>
-          <p>Public Telecommunications Operators (PTO), Value Added Services (VAS), and Private Network operators under the 2013 converged framework.</p>
-          <a href="licensing-framework.html" class="btn-text">View Framework <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-
-        <div class="category-card">
-          <i class="fa-solid fa-signal"></i>
-          <h3>Radio Spectrum</h3>
-          <p>Assignment and management of radio frequencies for mobile networks, satellite links, maritime, and aeronautical services.</p>
-          <a href="admin-portal.html" class="btn-text">Check Availability <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-
-        <div class="category-card">
-          <i class="fa-solid fa-microchip"></i>
-          <h3>Type Approval</h3>
-          <p>Certification of communication equipment to ensure compatibility and safety for use in the Botswana network infrastructure.</p>
-          <a href="equipment-search.html" class="btn-text">Apply for Approval <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-
-        <div class="category-card">
-          <i class="fa-solid fa-envelope"></i>
-          <h3>Postal Licensing</h3>
-          <p>Regulation and oversight of public and private postal services to ensure reliable mail delivery across the nation.</p>
-          <a href="postal.html" class="btn-text">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-
-        <div class="category-card">
-          <i class="fa-solid fa-radio"></i>
-          <h3>Broadcasting</h3>
-          <p>Licensing for commercial, community, and public broadcasting services across radio and television platforms.</p>
-          <a href="broadcasting.html" class="btn-text">View Requirements <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="portal-section">
-        <h2>BOCRA Online Portal</h2>
-        <p>Apply for new licenses, manage your existing portfolio, and pay regulatory fees online through the BOCRA admin portal and application system.</p>
-        <a href="admin-portal.html" class="btn btn-secondary portal-action-button">Access Admin Portal</a>
-      </div>
-
-      <div class="framework-link-box">
-        <div class="framework-details">
-          <i class="fa-solid fa-file-invoice-dollar"></i>
-          <div>
-            <h4>Unified Licensing Framework Policy</h4>
-            <p>Comprehensive guide on licensing categories, fees, and compliance.</p>
+      <div class="portal-layout">
+        <div class="portal-panel">
+          <div class="section-badge">Consumer Services</div>
+          <h2>Everything a consumer needs to get help</h2>
+          <p class="mt-4">The consumer portal connects the most important BOCRA public-service pages so visitors do not need to search through separate sections to find answers.</p>
+          <div class="portal-service-grid mt-4">
+            <article class="portal-service-card portal-service-card--consumer">
+              <div class="portal-service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h3>Consumer protection</h3>
+              <p>Understand your rights, responsibilities, and the guidance BOCRA provides to communications consumers.</p>
+              <div class="portal-service-links">
+                <a href="consumer-protection.html">Open Guidance</a>
+                <a href="documents-view.html">Related Documents</a>
+              </div>
+            </article>
+            <article class="portal-service-card portal-service-card--consumer">
+              <div class="portal-service-icon"><i class="fa-solid fa-paper-plane"></i></div>
+              <h3>Complaints and disputes</h3>
+              <p>Review the complaint process, prepare your information, and move directly into the BOCRA complaint page.</p>
+              <div class="portal-service-links">
+                <a href="complaints.html">Lodge a Complaint</a>
+                <a href="contact.html">Contact BOCRA</a>
+              </div>
+            </article>
+            <article class="portal-service-card portal-service-card--consumer">
+              <div class="portal-service-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+              <h3>Tariffs and answers</h3>
+              <p>Compare service information, review tariff guidance, and get quick answers to common public questions.</p>
+              <div class="portal-service-links">
+                <a href="tariffs.html">Tariffs</a>
+                <a href="faqs.html">FAQs</a>
+              </div>
+            </article>
+            <article class="portal-service-card portal-service-card--consumer">
+              <div class="portal-service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+              <h3>Equipment and safety</h3>
+              <p>Verify communication devices and use BOCRA guidance when checking whether equipment is approved for use.</p>
+              <div class="portal-service-links">
+                <a href="equipment-search.html">Search Equipment</a>
+                <a href="privacy-notice.html">Privacy Notice</a>
+              </div>
+            </article>
+          </div>
+          <div class="portal-cta-band portal-cta-band--consumer">
+            <div>
+              <h3>Need to take the next step?</h3>
+              <p>If your provider has not resolved your issue, move directly to the BOCRA complaints page and submit the details you already prepared.</p>
+            </div>
+            <a href="complaints.html" class="btn btn-primary">Go to Complaints</a>
           </div>
         </div>
-        <a href="licensing-framework.html" class="btn btn-secondary">Read Document <i class="fa-solid fa-file-lines"></i></a>
+        <aside class="portal-sidebar">
+          <div class="section-badge">Quick Help</div>
+          <h3>Most-used public links</h3>
+          <div class="portal-sidebar-links">
+            <a href="consumer-protection.html"><span>Consumer protection</span><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="complaints.html"><span>Complaint form</span><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="faqs.html"><span>Frequently asked questions</span><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="tariffs.html"><span>Tariffs</span><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="contact.html"><span>Contact BOCRA</span><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="portal-note portal-note--consumer">
+            <strong>Simple journey:</strong> read your rights, check tariffs or FAQs, then submit a complaint if the issue is still unresolved after working with your provider.
+          </div>
+          <div class="section-badge mt-4">Before you begin</div>
+          <div class="portal-list">
+            <div class="portal-list-item portal-list-item--consumer"><i class="fa-solid fa-circle-check"></i><div><strong>Contact your provider first</strong><br>Start with the service provider and keep the reference number they give you.</div></div>
+            <div class="portal-list-item portal-list-item--consumer"><i class="fa-solid fa-circle-check"></i><div><strong>Keep supporting details</strong><br>Gather statements, messages, and any complaint correspondence before filing.</div></div>
+            <div class="portal-list-item portal-list-item--consumer"><i class="fa-solid fa-circle-check"></i><div><strong>Use the right page</strong><br>Move between consumer protection, tariffs, FAQs, and the complaint form without leaving the BOCRA website.</div></div>
+          </div>
+        </aside>
       </div>
     </div>
   </section>

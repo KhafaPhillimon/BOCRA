@@ -6,27 +6,39 @@
 :root {
   --primary-navy: #003366;
   --primary-maroon: #911146;
+  --secondary-azure: #005082;
   --accent-pink: #c2185b;
   --accent-green: #008466;
+  --accent-teal: #008466;
   --utility-gray: #333333;
   --text-dark: #1E293B;
   --text-gray: #475569;
+  --text-color: #475569;
   --bg-light: #F8F9FA;
   --bg-white: #FFFFFF;
+  --bg-color: #F8F9FA;
   --footer-bottom: #000000;
-  
+
   --btn-asms: #1A4D3A;
   --btn-register: #005082;
   --btn-stats: #AF1217;
-  
+
+  --border-radius: 12px;
+  --border-radius-lg: 20px;
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 24px 40px -18px rgba(0, 0, 0, 0.24);
+  --shadow-glow: 0 14px 30px rgba(0, 80, 130, 0.22);
+  --shadow-large: 0 20px 45px -22px rgba(0, 0, 0, 0.24);
+  --shadow-soft: 0 14px 28px rgba(0, 51, 102, 0.08);
+  --shadow-hover: 0 18px 34px rgba(0, 51, 102, 0.14);
+  --transition-fast: all 0.2s ease;
   --transition-normal: all 0.3s ease;
-  
+
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Montserrat', sans-serif;
-  
+
   --gradient-dark: linear-gradient(135deg, #003366 0%, #001a33 100%);
   --gradient-maroon: linear-gradient(135deg, #911146 0%, #6d0d35 100%);
 }
@@ -528,6 +540,11 @@ ul {
 .hero-card:nth-child(2) { background-color: #008466; }
 .hero-card:nth-child(3) { background-color: #911146; }
 .hero-card:nth-child(4) { background-color: #d4ac0d; }
+
+.hero-card--telecom { background-color: #0056b3; }
+.hero-card--broadcasting { background-color: #008466; }
+.hero-card--postal { background-color: #911146; }
+.hero-card--internet { background-color: #d4ac0d; }
 
 .hero-card:hover {
   transform: translateY(-8px) scale(1.07);
@@ -1063,6 +1080,472 @@ ul.doc-list a i {
   max-width: 800px;
   margin: 0 auto 40px;
   font-size: 1.2rem;
+}
+
+.home-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.12)), url('hero_section.png') center/cover no-repeat;
+  min-height: 500px;
+  align-items: flex-end;
+  padding: 0 0 130px;
+}
+
+.home-hero-content {
+  max-width: 650px;
+}
+
+.home-hero-title {
+  font-size: 3rem;
+  margin-bottom: 18px;
+}
+
+.home-hero-summary {
+  font-size: 1.15rem;
+  margin-bottom: 0;
+}
+
+.covid-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.covid-message {
+  flex: 1;
+  min-width: 300px;
+}
+
+.covid-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.covid-summary {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+.covid-support-button {
+  background: var(--accent-teal);
+  color: #fff;
+  padding: 12px 35px;
+}
+
+.covid-support-button:hover {
+  color: #fff;
+}
+
+.covid-resource-card {
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 16px;
+  border-left: 10px solid #d4ac0d;
+}
+
+.covid-resource-icon {
+  font-size: 3rem;
+  color: #d4ac0d;
+  margin-bottom: 15px;
+}
+
+.covid-resource-card h4 {
+  color: #fff;
+}
+
+.covid-resource-card p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.about-cta-link {
+  background: var(--secondary-azure);
+}
+
+.about-portrait {
+  max-width: 100%;
+  max-height: 450px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.portal-access-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 80, 130, 0.04) 100%);
+}
+
+.portal-access-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.portal-access-card {
+  background: var(--bg-white);
+  border: 1px solid rgba(0, 51, 102, 0.08);
+  border-radius: 24px;
+  padding: 34px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-normal);
+}
+
+.portal-access-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.portal-access-card--admin {
+  border-top: 5px solid var(--secondary-azure);
+}
+
+.portal-access-card--consumer {
+  border-top: 5px solid var(--accent-teal);
+}
+
+.portal-access-icon {
+  width: 64px;
+  height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.portal-access-card--admin .portal-access-icon {
+  color: var(--secondary-azure);
+  background: rgba(0, 80, 130, 0.12);
+}
+
+.portal-access-card--consumer .portal-access-icon {
+  color: var(--accent-teal);
+  background: rgba(0, 132, 102, 0.12);
+}
+
+.portal-access-card h3 {
+  color: var(--primary-navy);
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+}
+
+.portal-access-card p {
+  margin-bottom: 24px;
+}
+
+.portal-access-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.portal-link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--bg-light);
+  color: var(--primary-navy);
+  font-weight: 600;
+}
+
+.portal-link-chip:hover {
+  color: var(--primary-navy);
+  background: rgba(0, 80, 130, 0.12);
+}
+
+.portal-card-action {
+  width: 100%;
+}
+
+.resource-title-link {
+  color: inherit;
+}
+
+.resource-title-link:hover {
+  color: inherit;
+}
+
+.resource-button--maroon {
+  background: var(--btn-stats);
+  color: #fff;
+}
+
+.resource-button--maroon:hover {
+  color: #fff;
+}
+
+.license-jump-note {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.equipment-badge {
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+
+.equipment-search-button {
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+
+.equipment-search-button:hover {
+  color: var(--primary-navy);
+}
+
+.equipment-search-icon {
+  margin-right: 10px;
+}
+
+.portal-hero {
+  padding: 100px 0 120px;
+}
+
+.portal-hero--admin {
+  background: linear-gradient(rgba(0, 51, 102, 0.92), rgba(0, 51, 102, 0.9)), url('hero_section.png') center/cover no-repeat;
+}
+
+.portal-hero--consumer {
+  background: linear-gradient(rgba(0, 132, 102, 0.9), rgba(0, 51, 102, 0.86)), url('bocra_consumer_protection_education.png') center/cover no-repeat;
+}
+
+.portal-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  margin-bottom: 20px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.portal-hero .section-header h1,
+.portal-hero .section-header p,
+.portal-hero .section-header h2,
+.portal-hero .section-header .hero-breadcrumb,
+.portal-hero .section-header .hero-breadcrumb a,
+.portal-hero .section-header .hero-breadcrumb span {
+  color: #fff;
+}
+
+.portal-hero .section-header h1 {
+  font-size: 3.4rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.portal-hero .section-header p {
+  max-width: 760px;
+  font-size: 1.15rem;
+  opacity: 0.92;
+}
+
+.portal-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 30px;
+  margin-top: -70px;
+  position: relative;
+  z-index: 4;
+}
+
+.portal-panel,
+.portal-sidebar {
+  background: var(--bg-white);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: var(--shadow-xl);
+}
+
+.portal-service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.portal-service-card {
+  border: 1px solid rgba(0, 51, 102, 0.08);
+  border-radius: 20px;
+  padding: 28px;
+  background: linear-gradient(180deg, rgba(248, 249, 250, 0.8) 0%, #fff 100%);
+  transition: var(--transition-normal);
+}
+
+.portal-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.portal-service-icon {
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  color: #fff;
+  background: var(--gradient-dark);
+}
+
+.portal-service-card--consumer .portal-service-icon {
+  background: linear-gradient(135deg, var(--accent-teal) 0%, var(--secondary-azure) 100%);
+}
+
+.portal-service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.portal-service-card p {
+  margin-bottom: 18px;
+}
+
+.portal-service-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.portal-service-links a {
+  font-weight: 600;
+}
+
+.portal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.portal-list-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.portal-list-item i {
+  color: var(--secondary-azure);
+  margin-top: 4px;
+}
+
+.portal-list-item--consumer i {
+  color: var(--accent-teal);
+}
+
+.portal-cta-band {
+  margin-top: 40px;
+  background: var(--gradient-dark);
+  border-radius: 24px;
+  padding: 36px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.portal-cta-band h3,
+.portal-cta-band p {
+  color: #fff;
+}
+
+.portal-cta-band p {
+  margin: 10px 0 0;
+  opacity: 0.88;
+}
+
+.portal-cta-band--consumer {
+  background: linear-gradient(135deg, var(--accent-teal) 0%, var(--primary-navy) 100%);
+}
+
+.portal-sidebar h3 {
+  margin-bottom: 18px;
+}
+
+.portal-sidebar .section-badge {
+  margin-bottom: 16px;
+}
+
+.portal-sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.portal-sidebar-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--bg-light);
+  color: var(--primary-navy);
+  font-weight: 600;
+}
+
+.portal-sidebar-links a:hover {
+  background: rgba(0, 80, 130, 0.12);
+  color: var(--primary-navy);
+}
+
+.portal-note {
+  margin-top: 24px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: rgba(0, 80, 130, 0.08);
+  color: var(--primary-navy);
+}
+
+.portal-note--consumer {
+  background: rgba(0, 132, 102, 0.1);
+}
+
+@media (max-width: 992px) {
+  .portal-access-grid,
+  .portal-layout,
+  .portal-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-layout {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    min-height: 420px;
+    padding-bottom: 100px;
+  }
+
+  .home-hero-title,
+  .portal-hero .section-header h1,
+  .covid-title {
+    font-size: 2.2rem;
+  }
+
+  .portal-panel,
+  .portal-sidebar,
+  .portal-access-card,
+  .portal-cta-band {
+    padding: 24px;
+  }
 }
 
 .split-wrapper {
