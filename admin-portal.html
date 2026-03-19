@@ -3,167 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Licensing | BOCRA</title>
-  <meta name="description" content="Official licensing portal for communications services in Botswana: Unified, Spectrum, Broadcasting, and Type Approval." />
+  <title>Admin Portal | BOCRA</title>
+  <meta name="description" content="BOCRA admin portal for licensing, equipment approval, documents, and procurement access." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .licensing-hero {
-      background: linear-gradient(rgba(13, 44, 94, 0.9), rgba(13, 44, 94, 0.9)), url('bocra_licensing_compliance_seal.png');
-      background-size: cover;
-      background-position: center;
-      padding: 100px 0 140px;
-    }
-
-    .licensing-breadcrumb {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    .licensing-breadcrumb a {
-      color: #fff;
-    }
-
-    .licensing-hero-title {
-      font-size: 3.5rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-
-    .licensing-hero-summary {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      opacity: 0.9;
-      color: #fff;
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .category-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: var(--shadow-md);
-      transition: var(--transition-normal);
-      display: flex;
-      flex-direction: column;
-      border: 1px solid #eee;
-    }
-
-    .category-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-xl);
-      border-color: var(--secondary-azure);
-    }
-
-    .category-card i {
-      font-size: 2.5rem;
-      color: var(--secondary-azure);
-      margin-bottom: 25px;
-    }
-
-    .category-card h3 {
-      color: var(--primary-navy);
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-
-    .category-card p {
-      line-height: 1.6;
-      color: var(--text-gray);
-      margin-bottom: 25px;
-      flex-grow: 1;
-    }
-
-    .portal-section {
-      background: var(--gradient-dark);
-      padding: 100px 0;
-      color: #fff;
-      border-radius: 30px;
-      margin: 80px 0;
-      text-align: center;
-    }
-
-    .portal-section h2 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-
-    .portal-section p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      opacity: 0.8;
-      color: #fff;
-    }
-
-    .portal-action-button {
-      border: none;
-    }
-
-    .framework-link-box {
-      background: #fff;
-      border-radius: 16px;
-      padding: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      box-shadow: var(--shadow-sm);
-      margin-top: 40px;
-    }
-
-    .framework-link-box i {
-      color: var(--accent-teal);
-      font-size: 2rem;
-    }
-
-    .framework-details {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .framework-details h4 {
-      font-weight: 700;
-      color: var(--primary-navy);
-    }
-
-    .framework-details p {
-      color: var(--text-gray);
-      font-size: 0.9rem;
-      margin: 0;
-    }
-
-    @media (max-width: 768px) {
-      .licensing-hero-title {
-        font-size: 2.5rem;
-      }
-
-      .framework-link-box,
-      .framework-details {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="top-banner" id="top-banner">
@@ -234,77 +80,89 @@
     </div>
   </header>
 
-  <section class="licensing-hero">
-    <div class="container text-center text-white">
-      <div class="licensing-breadcrumb">
-        <a href="index.html">Home</a>
-        <i class="fa-solid fa-chevron-right"></i>
-        <span>Licensing</span>
+  <section class="portal-hero portal-hero--admin">
+    <div class="container">
+      <div class="section-header">
+        <div class="portal-kicker"><i class="fa-solid fa-user-shield"></i> BOCRA Admin Portal</div>
+        <h1>Connected services for operators and internal access</h1>
+        <p>Manage licensing, review regulatory documents, access equipment approval tools, and move quickly to procurement and notice pages from one admin entry point.</p>
       </div>
-      <h1 class="licensing-hero-title">Regulatory Licensing</h1>
-      <p class="licensing-hero-summary">Secure regulatory permission to operate communications services in the Botswana market.</p>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section bg-light">
     <div class="container">
-      <div class="section-header text-center">
-        <div class="section-badge">Categories</div>
-        <h2>Licensing Portfolios</h2>
-      </div>
-
-      <div class="category-grid">
-        <div class="category-card">
-          <i class="fa-solid fa-tower-cell"></i>
-          <h3>Unified Licensing</h3>
-          <p>Public Telecommunications Operators (PTO), Value Added Services (VAS), and Private Network operators under the 2013 converged framework.</p>
-          <a href="licensing-framework.html" class="btn-text">View Framework <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-
-        <div class="category-card">
-          <i class="fa-solid fa-signal"></i>
-          <h3>Radio Spectrum</h3>
-          <p>Assignment and management of radio frequencies for mobile networks, satellite links, maritime, and aeronautical services.</p>
-          <a href="admin-portal.html" class="btn-text">Check Availability <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-
-        <div class="category-card">
-          <i class="fa-solid fa-microchip"></i>
-          <h3>Type Approval</h3>
-          <p>Certification of communication equipment to ensure compatibility and safety for use in the Botswana network infrastructure.</p>
-          <a href="equipment-search.html" class="btn-text">Apply for Approval <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-
-        <div class="category-card">
-          <i class="fa-solid fa-envelope"></i>
-          <h3>Postal Licensing</h3>
-          <p>Regulation and oversight of public and private postal services to ensure reliable mail delivery across the nation.</p>
-          <a href="postal.html" class="btn-text">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-
-        <div class="category-card">
-          <i class="fa-solid fa-radio"></i>
-          <h3>Broadcasting</h3>
-          <p>Licensing for commercial, community, and public broadcasting services across radio and television platforms.</p>
-          <a href="broadcasting.html" class="btn-text">View Requirements <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="portal-section">
-        <h2>BOCRA Online Portal</h2>
-        <p>Apply for new licenses, manage your existing portfolio, and pay regulatory fees online through the BOCRA admin portal and application system.</p>
-        <a href="admin-portal.html" class="btn btn-secondary portal-action-button">Access Admin Portal</a>
-      </div>
-
-      <div class="framework-link-box">
-        <div class="framework-details">
-          <i class="fa-solid fa-file-invoice-dollar"></i>
-          <div>
-            <h4>Unified Licensing Framework Policy</h4>
-            <p>Comprehensive guide on licensing categories, fees, and compliance.</p>
+      <div class="portal-layout">
+        <div class="portal-panel">
+          <div class="section-badge">Portal Services</div>
+          <h2>Regulatory workflows in one place</h2>
+          <p class="mt-4">This portal connects the main BOCRA pages used by operators, institutions, and teams managing compliance and service applications.</p>
+          <div class="portal-service-grid mt-4">
+            <article class="portal-service-card">
+              <div class="portal-service-icon"><i class="fa-solid fa-file-signature"></i></div>
+              <h3>Licensing applications</h3>
+              <p>Start new applications, review licensing guidance, and move into the online registration system.</p>
+              <div class="portal-service-links">
+                <a href="licensing.html">Licensing Page</a>
+                <a href="https://registration.bocra.org.bw/" target="_blank" rel="noopener noreferrer">Open ASMS-WebCP</a>
+              </div>
+            </article>
+            <article class="portal-service-card">
+              <div class="portal-service-icon"><i class="fa-solid fa-microchip"></i></div>
+              <h3>Equipment approval</h3>
+              <p>Check approved equipment, review type approval information, and support compliance checks.</p>
+              <div class="portal-service-links">
+                <a href="equipment-search.html">Equipment Search</a>
+                <a href="licensing.html">Type Approval</a>
+              </div>
+            </article>
+            <article class="portal-service-card">
+              <div class="portal-service-icon"><i class="fa-solid fa-file-lines"></i></div>
+              <h3>Documents and frameworks</h3>
+              <p>Open draft documents, the ICT licensing framework, and workshop resources without leaving the BOCRA site structure.</p>
+              <div class="portal-service-links">
+                <a href="draft-docs.html">Draft Documents</a>
+                <a href="licensing-framework.html">Licensing Framework</a>
+              </div>
+            </article>
+            <article class="portal-service-card">
+              <div class="portal-service-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <h3>Procurement and notices</h3>
+              <p>Track current tenders, view public media notices, and stay aligned with regulatory updates.</p>
+              <div class="portal-service-links">
+                <a href="tenders.html">Tenders</a>
+                <a href="media.html">Media Updates</a>
+              </div>
+            </article>
+          </div>
+          <div class="portal-cta-band">
+            <div>
+              <h3>Need the transactional system?</h3>
+              <p>Use BOCRA’s online application system for formal submissions, portfolio management, and regulatory fee processes.</p>
+            </div>
+            <a href="https://registration.bocra.org.bw/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Launch ASMS-WebCP</a>
           </div>
         </div>
-        <a href="licensing-framework.html" class="btn btn-secondary">Read Document <i class="fa-solid fa-file-lines"></i></a>
+        <aside class="portal-sidebar">
+          <div class="section-badge">Quick Links</div>
+          <h3>Most-used admin routes</h3>
+          <div class="portal-sidebar-links">
+            <a href="licensing.html"><span>Licensing services</span><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="equipment-search.html"><span>Equipment approval search</span><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="draft-docs.html"><span>Draft documents</span><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="projects.html"><span>Projects</span><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="tenders.html"><span>Tenders</span><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="portal-note">
+            <strong>Connected flow:</strong> licensing and framework pages now link back into the BOCRA website instead of sending users away to the framework PDF from the main navigation.
+          </div>
+          <div class="section-badge mt-4">Checklist</div>
+          <div class="portal-list">
+            <div class="portal-list-item"><i class="fa-solid fa-circle-check"></i><div><strong>Prepare documents</strong><br>Keep application details and supporting files ready before opening the registration system.</div></div>
+            <div class="portal-list-item"><i class="fa-solid fa-circle-check"></i><div><strong>Review guidance</strong><br>Use the licensing framework and draft documents pages to confirm requirements.</div></div>
+            <div class="portal-list-item"><i class="fa-solid fa-circle-check"></i><div><strong>Check equipment</strong><br>Verify device approval before deploying communications equipment.</div></div>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
@@ -339,7 +197,7 @@
             <li><a href="faqs.html">FAQs</a></li>
             <li><a href="consumer-protection.html">Consumer Protection</a></li>
             <li><a href="privacy-notice.html">Privacy Notice</a></li>
-            <li><a href="admin-portal.html">Admin Portal</a></li>
+            <li><a href="consumer-portal.html">Consumer Portal</a></li>
           </ul>
         </div>
         <div class="footer-col social-col">
